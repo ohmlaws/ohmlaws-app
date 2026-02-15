@@ -5,12 +5,24 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
+env:
+  VERSION_NAME: "1.0"
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -30,34 +42,31 @@ jobs:
           cd myapp
           cordova platform add android
 
-      - name: Setup Resources (Validation Hack)
+      - name: Increment App Version
+        run: |
+          cd myapp
+          echo "Setting version to ${{ env.VERSION_NAME }}.${{ github.run_number }}"
+          sed -i 's/version="[^"]*"/version="${{ env.VERSION_NAME }}.${{ github.run_number }}"/' config.xml
+          if grep -q "android-versionCode" config.xml; then
+            sed -i 's/android-versionCode="[^"]*"/android-versionCode="${{ github.run_number }}"/' config.xml
+          else
+            sed -i 's/<widget/<widget android-versionCode="${{ github.run_number }}"/' config.xml
+          fi
+
+      - name: Setup Resources
         run: |
           mkdir -p myapp/resources
           cp resources/icon.png myapp/resources/icon.png
-          
-          # 1. Trick cordova-res with a big image so it generates ICONS successfully
           convert resources/splash.png -resize 2732x2732! myapp/resources/splash.png
-          
-          # 2. Generate ONLY icons (We skip splash generation to avoid adding broken tags)
           cd myapp
           cordova-res android --icon
 
       - name: Setup Real Splash Screen
         run: |
-          # 3. Overwrite the fake image with your REAL 1179px image
-          # We place it in the project root resources folder where Cordova expects it
           cp resources/splash.png myapp/resources/splash.png
-          
           cd myapp
-          
-          # 4. REMOVE old broken <splash> tags if they exist
           sed -i '/<splash/d' config.xml
-          
-          # 5. Add the correct Android 12 preferences
-          # Note: We point to 'resources/splash.png', NOT '@drawable'
-          sed -i 's|<platform name="android">|<platform name="android">\n        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />\n        <preference name="AndroidWindowSplashScreenBackground" value="#0c2c4a" />|' config.xml
-          
-          # 6. Add delay preference
+          sed -i 's|<platform name="android">|<platform name="android">\n        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />\n        <preference name="AndroidWindowSplashScreenBackground" value="#011842" />|' config.xml
           sed -i '/<\/widget>/i \    <preference name="SplashScreenDelay" value="1000" />' config.xml
 
       - name: Setup Website Files
@@ -65,13 +74,35 @@ jobs:
           rm -rf myapp/www/*
           cp -r www/* myapp/www/
 
-      - name: Build APK (Debug)
+      - name: Build APK (Release Mode)
         run: |
           cd myapp
-          cordova build android --debug
+          cordova build android --release -- --packageType=apk
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      # --- FIXED SECTION BELOW ---
+      # Updated parameter names to match 'ilharp/sign-android-release' requirements
+      - name: Sign APK
+        id: sign_app
+        uses: ilharp/sign-android-release@v1
         with:
-          name: OhmLaws-APK
-          path: myapp/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          releaseDir: myapp/platforms/android/app/build/outputs/apk/release
+          signingKey: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          keyAlias: ${{ secrets.ANDROID_KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          buildToolsVersion: 34.0.0
+
+      # Note: This action uses 'signedFile' as the output variable
+      - name: Rename APK
+        run: |
+          mv "${{ steps.sign_app.outputs.signedFile }}" "OhmLaws-v${{ env.VERSION_NAME }}.${{ github.run_number }}.apk"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.VERSION_NAME }}.${{ github.run_number }}
+          name: OhmLaws v${{ env.VERSION_NAME }}.${{ github.run_number }}
+          files: |
+            OhmLaws-v${{ env.VERSION_NAME }}.${{ github.run_number }}.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

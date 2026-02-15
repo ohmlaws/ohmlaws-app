@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhmLaws - Second Year - DC Generator</title>
+    <base href="../../../">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/post.css">
+<link rel="stylesheet" href="lib/katex/katex.min.css">
+<script src="lib/katex/katex.min.js"></script>
+<script src="lib/katex/contrib/auto-render.min.js"></script> 
+
+</head>
+<body>
+<div class="post-container">
+            
+            <h1 class="post-title">DC Generator</h1>
+            <p class="post-subtitle">Theory, Module-1</p>
+            <div class="post-meta">Posted May 13, 2025  <span>By <strong><a href="https://roniui.github.io" style="color:#ff7300">Roni</a></strong></span></div>
+          
+    <main>
+<hr>
+<br>
+<div onclick="checkAnswer(this)" style="text-align: center;">⭕️ Show all Answers</div>
+<br><hr>
+
+<h3 id="q1">Q1: What is the name of the part marked as 'X' in DC generator? </h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q1.webp" alt="DC generator part marked X">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature core</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Brush</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Commutator raiser </li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Commutator segment</li>
+</ul>
+<hr>
+<h3 id="q2">Q2: What is the name of D.C generator? </h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q2.webp" alt="DC generator circuit diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Differential long shunt compound </li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential short shunt compound</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cumulative long shunt compound</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cumulative short shunt compound</li>
+</ul>
+<hr>
+<h3 id="q3">Q3: Which rule is used to find the direction of induced emf in D.C generator? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cork screw rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand palm rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's left hand rule</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fleming's right hand rule </li>
+</ul>
+<hr>
+<h3 id="q4">Q4: Which formula is used to calculate the generated emf in D.C generator? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\frac{\phi ZN}{60}$ volts</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\frac{\phi ZNP}{60}$ volts</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">$\frac{\phi ZNP}{60A}$ volts </li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\frac{\phi ZNPA}{60}$ volts</li>
+</ul>
+<hr>
+<h3 id="q5">Q5: What is the formula to calculate back emf of a D.C motor? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">$E_b = \frac{V}{I_aR_a}$ Volts</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$E_b = V \times I_aR_a$ Volts</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">$E_b = V - I_aR_a$ Volts </li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$E_b = V + I_aR_a$ Volts</li>
+</ul>
+<hr>
+<h3 id="q6">Q6: What is the name of the part marked 'X' in DC generator? </h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q6.webp" alt="DC generator pole assembly part X">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pole tip</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pole coil</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pole core</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Pole shoe </li>
+</ul>
+<hr>
+<h3 id="q7">Q7: What is the name of the D.C generator? </h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q7.webp" alt="DC generator diagram">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Compound generator</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Separately excited generator </li>
+</ul>
+<hr>
+<h3 id="q8">Q8: Which energy is converted into electrical energy by generator? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Heat</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Kinetic</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Chemical</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Mechanical </li>
+</ul>
+<hr>
+<h3 id="q9">Q9: What is the name of D.C generator's field? </h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q9.webp" alt="DC generator field diagram">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short shunt compound generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Long shunt compound generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound generator</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cumulative compound generator </li>
+</ul>
+<hr>
+<h3 id="q10">Q10: What is the principle of D.C generator? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cork screw rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's left hand rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's right hand rule</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Faraday's laws of electromagnetic induction </li>
+</ul>
+<hr>
+<h3 id="q11">Q11: What is the formula for dynamically induced emf? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">BLV volts</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">BL sin$\theta$ volts</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">BLV sin$\theta$ volts </li>
+<li onclick="checkAnswer(this, false)" data-correct="false">BLV cos$\theta$ volts</li>
+</ul>
+<hr>
+<h3 id="q12">Q12: Which rule is used to find direction of magnetic field? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cork screw rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand palm rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's left hand rule</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fleming's right hand rule</li>
+</ul>
+<hr>
+<h3 id="q13">Q13: What is the name of the part of DC generator? </h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q13.webp" alt="Part of DC generator">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Stator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pole core</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pole shoes</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Yoke (or) frame </li>
+</ul>
+<hr>
+<h3 id="q14">Q14: How many parallel paths in duplex lap winding of a 4 pole DC generator? </h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">4</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">6</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">8</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">12</li>
+</ul>
+<hr>
+<h3 id="q15">Q15: Name the part of DC generator?</h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q15.webp" alt="DC generator part">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Side end plates</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pole shoe lamination</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Commutator segment</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature core lamination</li>
+</ul>
+<hr>
+<h3 id="q16">Q16: How interpoles are connected in a DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">In series with armature</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">In parallel with armature</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">In series with shunt field</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">In parallel with shunt field</li>
+</ul>
+<hr>
+<h3 id="q17">Q17: What is the necessity of residual magnetism in a self excited DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Build up the voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the field current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce armature current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain constant output voltage</li>
+</ul>
+<hr>
+<h3 id="q18">Q18: Which are the two points that the brush contact resistance measured in D.C machines?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Resistance between the opposite brushes</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Resistance between brush and commutator raiser</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Resistance between brush and commutator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Resistance between brush and armature conductors</li>
+</ul>
+<hr>
+<h3 id="q19">Q19: Which voltage drop is indicated in the portion marked as 'X'?</h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q19.webp" alt="Graph showing voltage drop marked X">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Full load voltage drop</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature voltage drop</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature reaction drop</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt field voltage drop</li>
+</ul>
+<hr>
+<h3 id="q20">Q20: What is the name of the compound generator, if the shunt field is connected in parallel with armature?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cumulative compound</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Long shunt compound</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Short shunt compound</li>
+</ul>
+<hr>
+<h3 id="q21">Q21: Why the armature core of a DC generator is laminated?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the copper loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the friction loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the hysteresis loss</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Reduce the eddy current loss</li>
+</ul>
+<hr>
+<h3 id="q22">Q22: Why armature resistance of a D.C generator is very low?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce armature current</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Reduce armature voltage drop</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Run armature with less weight</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the temperature of armature</li>
+</ul>
+<hr>
+<h3 id="q23">Q23: Why the D.C generator should run in clockwise direction only?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect brushes from damage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Protect the residual magnetism</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Avoid short circuit in armature</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Avoid over loading of generator</li>
+</ul>
+<hr>
+<h3 id="q24">Q24: Why compensating winding is provided in large DC generators?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Connect more loads</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce commutation effect</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Neutralize armature reaction effect</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increase the efficiency of generator</li>
+</ul>
+<hr>
+<h3 id="q25">Q25: What is the reason for DC generator fails to build up voltage?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Loose brush contact</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature resistance is more</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Field resistance is above critical resistance</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Prime mover is running at above rated speed</li>
+</ul>
+<hr>
+<h3 id="q26">Q26: What is the name of generator, if its field is connected in parallel with armature?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Shunt generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Compound generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Self excited generator</li>
+</ul>
+<hr>
+<h3 id="q27">Q27: What is the purpose of pole shoe in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the air gap</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increase the field strength</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Minimize the magnetic losses</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Spread out flux uniformly in the air gap</li>
+</ul>
+<hr>
+<h3 id="q28">Q28: What is the function of split rings in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Collects the current unidirectionally</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain constant voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduces the voltage drop at brushes</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increases the terminal voltage than rated</li>
+</ul>
+<hr>
+<h3 id="q29">Q29: Which material is used to make brush in generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Carbon and graphite</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Steel and graphite</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cast iron and graphite</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Aluminium and graphite</li>
+</ul>
+<hr>
+<h3 id="q30">Q30: Why DC generators are loosing their residual magnetism?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Running without load continuously</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Heavy short circuit in load</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Continuous running without break</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Change of direction of rotation very often</li>
+</ul>
+<hr>
+<h3 id="q31">Q31: How does the magnetic circuit complete through the yoke and poles in a generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field coils</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature core</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Laminated pole core</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Winding conductors in armature</li>
+</ul>
+<hr>
+<h3 id="q32">Q32: Why the terminal voltage decreases if load increases in DC shunt generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Because of armature reaction effect</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Due to increased in armature resistance</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Because of brush voltage drop decreases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Due to increased in shunt field inductance</li>
+</ul>
+<hr>
+<h3 id="q33">Q33: Which type of DC generator is used for long distance distribution lines?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound generator</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cumulative compound generator</li>
+</ul>
+<hr>
+<h3 id="q34">Q34: Which method is used to improve the insulation resistance in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Replacing the brushes frequently</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Heating the machine by running periodically</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cleaning the commutator segments regularly</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Blowing hot air in to the machine during maintenance</li>
+</ul>
+<hr>
+<h3 id="q35">Q35: Which type of D.C Generator works in absence of residual magnetism?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Compound generator</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Separately excited generator</li>
+</ul>
+<hr>
+<h3 id="q36">Q36: Which type of D.C generator is used for arc welding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series generator</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Differential compound generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cumulative compound generator</li>
+</ul>
+<hr>
+<h3 id="q37">Q37: What is the property of wave winding in D.C generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Low current low voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">High current low voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Low current high voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">High current high voltage</li>
+</ul>
+<hr>
+<h3 id="q38">Q38: What is the purpose of resistance wire used in the commutator connection in D.C. generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain constant voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Nullifying statically induced emf</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increasing statically induced emf</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Smooth reversal of current direction</li>
+</ul>
+<hr>
+<h3 id="q39">Q39: Why solid pole core are used in D.C generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To reduce the copper loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To increase the residual magnetism</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To decrease the residual magnetism</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To reduce the reluctance of magnetic path</li>
+</ul>
+<hr>
+<h3 id="q40">Q40: Which metal is used to make large capacity DC generator yoke?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cast iron</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Soft iron</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Aluminium</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Rolled Steel</li>
+</ul>
+<hr>
+<h3 id="q41">Q41: What is the function of split rings in a D.C generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Supplies output continuously</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Makes output in the uni direction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Makes output in the opposite direction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Collects the output from alternate conductors</li>
+</ul>
+<hr>
+<h3 id="q42">Q42: Which type of voltage is induced dynamically in a D.C generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pulsating voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Oscillating voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Alternating voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Direct current voltage</li>
+</ul>
+<hr>
+<h3 id="q43">Q43: What is the purpose of slot marked as 'X'?</h3>
+<img src="/assets/img/posts/secondyear/theory/m1-q43.webp" alt="DC generator armature shaft with slot X">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">To fix the key way</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To make air circulation</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">For lubrication purpose</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">For easy removal from shaft</li>
+</ul>
+<hr>
+<h3 id="q44">Q44: What is the purpose of field coils in D.C generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To increase the flux in air gap</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To decrease the magnetizing current</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To magnetize the poles to produce coil flux</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To increase the reluctance of magnetic path</li>
+</ul>
+<hr>
+<h3 id="q45">Q45: Which metal is used to make pole core of large DC generator machines?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Soft iron</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cast iron</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cast steel</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Stainless steel</li>
+</ul>
+<hr>
+<h3 id="q46">Q46: Why the pole core stampings are laminated in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the friction loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the windage loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the hysteresis loss</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Reduce the eddy current loss</li>
+</ul>
+<hr>
+<h3 id="q47">Q47: Which type of DC generator is used for electroplating process?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Shunt generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound generator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cumulative compound generator</li>
+</ul>
+<hr>
+<h3 id="q48">Q48: What is the purpose of compensating winding in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Minimizes rough commutation</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain constant output voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Neutralizes the demagnetizing effect</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Decreases the excitation current of field coils</li>
+</ul>
+<hr>
+<h3 id="q49">Q49: What is the effect if the shunt field resistance is above critical resistance value in a D.C generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Output voltage is pulsating</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Output voltage is above normal</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Generator fails to build up voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Generator builds up voltage normally</li>
+</ul>
+<hr>
+<h3 id="q50">Q50: What is the effect of armature reaction in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Output voltage increases</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Output voltage decreases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Output voltage is pulsating</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Output voltage will become zero</li>
+</ul>
+<hr>
+<h3 id="q51">Q51: Calculate the emf generated in a 4 pole DC generator with simplex wave wound armature has 1020 conductors and driven at a speed of 1500 rpm, the flux/pole is 0.007 webers?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">178 V</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">243 V</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">357 V</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">428 V</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+  \[\]
+* Number of poles ($P$) = $4$\[\]
+* Number of conductors ($Z$) = $1020$\[\]
+* Speed ($N$) = $1500 \text{ rpm}$\[\]
+* Flux per pole ($\phi$) = $0.007 \text{ Wb}$\[\]
+* Winding type = Simplex Wave Wound
+  \[\]
+The generated EMF ($E_g$) in a DC generator is calculated using the formula:\[\]
+$$E_g = \frac{\phi Z N P}{60 A}$$
+\[\]
+For a Wave Wound armature, the number of parallel paths ($A$) is always equal to 2, regardless of the number of poles.
+\[\]
+$$E_g = \frac{0.007 \times 1020 \times 1500 \times 4}{60 \times 2}$$
+\[\]
+$$E_g = 357 \text{ Volts}$$
+
+</details>
+<hr>
+<h3 id="q52">Q52: How the effect of armature reaction can be neutralized in large DC generators?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Using compensating winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Providing additional inter poles</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increasing brush contact resistance</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Adding resistance wires with winding</li>
+</ul>
+<hr>
+<h3 id="q53">Q53: What is the effect in D.C generator, if it is kept ideal for long time?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field coil resistance increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature resistance Increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increase the armature reaction</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Looses its residual magnetism</li>
+</ul>
+<hr>
+<h3 id="q54">Q54: Calculate the induced emf of 4 pole dynamo having 1000 rpm lap wound and total number of conductors is 600, the flux/ pole is 0.064 wb?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">160V</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">320V</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">480V</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">640V</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+  \[\]
+**Formula:**
+$$E_g = \frac{\phi Z N P}{60 A}$$
+\[\]
+$\phi = 0.064 \text{ Wb}$
+\[\]
+$Z = 600$
+\[\]
+$N = 1000 \text{ rpm}$
+\[\]
+$P = 4$
+\[\]
+$A = 4$ (For Lap winding, $A = P$)
+ \[\]
+$$E_g = \frac{0.064 \times 600 \times 1000 \times 4}{60 \times 4}$$
+\[\]
+$$E_g = 640 \text{ V}$$
+
+</details>
+<hr>
+<h3 id="q55">Q55: What is the effect on induced emf if the main field flux get distorted in DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Induced emf increases</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Induced emf decreases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">No change in induced emf</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Induced emf becomes zero</li>
+</ul>
+<hr>
+<h3 id="q56">Q56: What is the cause for heavy sparking in brushes of DC generator?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit in field winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit in armature winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">MNA and GNA position changed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Too much spring tension at brush</li>
+</ul>
+<hr>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true}, 
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    <script src="js/layout.js"></script>
+<script src="js/mcq.js"></script> 
+  </body>
+</html>

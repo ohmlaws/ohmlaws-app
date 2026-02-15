@@ -69,6 +69,10 @@ header {
 
 .sidebar-header { padding: 30px 20px; text-align: center; border-bottom: 1px solid var(--border); }
 .sidebar-logo img { width: 80px; margin-bottom: 10px; }
+.sidebar img {
+    display: inline-block;
+}
+
 .sidebar-title { font-size: 1.5rem; font-weight: bold; color: var(--text-main); }
 .sidebar-subtitle { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
 
@@ -179,4 +183,12 @@ footer { text-align: center; padding: 30px; color: var(--text-muted); font-size:
 /* 3. Folder Icon (Encoded SVG) */
 .icon-folder {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b949e'%3E%3Cpath d='M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 .087.586l2.977-7.937A1 1 0 0 1 6 10h12V9a2 2 0 0 0-2-2h-4.532l-1.9-2.28A2 2 0 0 0 8.032 4H4Zm2.693 8H6.5l-3 8H18l3-8H6.693Z'/%3E%3C/svg%3E");
+}
+
+
+/* GLOBAL IMAGE RESET */
+img {
+    max-width: 100%;  /* Never wider than the screen/container */
+    height: auto;     /* Keep the aspect ratio (don't stretch) */
+    display: block;   /* Removes tiny gap below images */
 }

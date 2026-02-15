@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhmLaws - Second Year - DC Motor</title>
+    <base href="../../../">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/post.css">
+<link rel="stylesheet" href="lib/katex/katex.min.css">
+<script src="lib/katex/katex.min.js"></script>
+<script src="lib/katex/contrib/auto-render.min.js"></script> 
+
+</head>
+<body>
+<div class="post-container">
+            
+            <h1 class="post-title">DC Motor</h1>
+            <p class="post-subtitle">Theory, Module-2</p>
+            <div class="post-meta">Posted May 13, 2025  <span>By <strong><a href="https://roniui.github.io" style="color:#ff7300">Roni</a></strong></span></div>
+          
+    <main>
+<hr>
+<br>
+<div onclick="checkAnswer(this)" style="text-align: center;">⭕️ Show all Answers</div>
+<br><hr>
+
+
+<h3 id="q1">Q1: Which instrument is used to measure armature winding resistance?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Megger</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Multimeter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series type Ohm meter</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Kelvin bridge</li>
+</ul>
+<hr>
+<h3 id="q2">Q2: Which instrument is used to test armature winding for short and open circuit?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Tong Tester</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Internal Growler</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">External Growler</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Digital multimeter</li>
+</ul>
+<hr>
+<h3 id="q3">Q3: What is the name of the speed control method of DC motor?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q3.webp" alt="speed control method of DC motor diagram">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field diverter method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field tapping method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Voltage control method</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature diverter method</li>
+</ul>
+<hr>
+<h3 id="q4">Q4: Which winding wire is used for DC field coil?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Super enameled copper wire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Single silk covered copper wire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Double silk covered copper wire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">PVC covered copper winding wire</li>
+</ul>
+<hr>
+<h3 id="q5">Q5: Which formula is used to calculate the speed of DC motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">$N = \frac{E_b}{\phi}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$N = \frac{\phi}{E_b}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$N = \frac{E_b \cdot \phi}{120}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$N = \frac{E_b \cdot \phi}{60}$</li>
+</ul>
+<hr>
+<h3 id="q6">Q6: How many parallel paths in duplex lap winding in the armature of 4 pole D.C Motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">2</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">4</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">6</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">8</li>
+</ul>
+<hr>
+<h3 id="q7">Q7: Which rule determines the direction of rotation of armature in D.C motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand grip rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand palm rule</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fleming's left hand rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's right hand rule</li>
+</ul>
+<hr>
+<h3 id="q8">Q8: What is the name of D.C motor?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q8.webp" alt="D.C motor diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">D.C shunt motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">D.C series motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">D.C differential compound motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">D.C cumulative compound motor</li>
+</ul>
+<hr>
+<h3 id="q9">Q9: Which rule determines the direction of current in D.C motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand grip rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand palm rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's left hand rule</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fleming's right hand rule</li>
+</ul>
+<hr>
+<h3 id="q10">Q10: What is the formula to calculate the current taken by D.C shunt motor armature?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">$I_a = \frac{V}{R_a}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$I_a = \frac{E_b}{R_a}$</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">$I_a = \frac{V-E_b}{R_a}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$I_a = \frac{V+E_b}{R_a}$</li>
+</ul>
+<hr>
+<h3 id="q11">Q11: Which rule is applied to identify the direction of flux in DC motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cork's screw rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Right hand grip rule</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fleming's left hand rule</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fleming's right hand rule</li>
+</ul>
+<hr>
+<h3 id="q12">Q12: Name the type of DC motor.</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q12.webp" alt="DC motor type diagram">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Long shunt compound motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Short shunt compound motor</li>
+</ul>
+<hr>
+<h3 id="q13">Q13: What is the formula to calculate back EMF in a DC motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">$E_b = \frac{ZNP\phi}{60A}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$E_b = \frac{NP}{Z\phi 60A}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$E_b = \frac{ZNP}{60A\phi}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$E_b = \frac{60A\phi}{ZNP}$</li>
+</ul>
+<hr>
+<h3 id="q14">Q14: What is the name of the equipment?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q14.webp" alt="equipment diagram">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Megger</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Earth resistance tester</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Internal growler</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">External growler</li>
+</ul>
+<hr>
+<h3 id="q15">Q15: What is the name of winding, if coil pitch is less than pole pitch?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Full pitch winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Half pitch winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Long chorded winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Short chorded winding</li>
+</ul>
+<hr>
+<h3 id="q16">Q16: What is the purpose of series resistor connected with holding coil in a D.C four point starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Limit the current in holding coil</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increase the current in holding coil</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increase the voltage in holding coil</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Decrease the voltage in holding coil</li>
+</ul>
+<hr>
+<h3 id="q17">Q17: Which speed control method of D.C series motor is used for electric train?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Field diverter method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field tapping method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature diverter method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Supply voltage control method</li>
+</ul>
+<hr>
+<h3 id="q18">Q18: Why shunt field coil is connected in series with holding coil in D.C three point starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increase the holding coil current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Decrease the holding coil current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect the shunt field from over current</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Protect the motor in case of open in shunt field</li>
+</ul>
+<hr>
+<h3 id="q19">Q19: Why the direction of rotation is changed only by changing the armature current direction in a D.C compound motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain rated speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Maintain motor characteristics</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Avoid armature reaction effect</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Prevent motor from over loading</li>
+</ul>
+<hr>
+<h3 id="q20">Q20: Which speed control methods offers below normal speed in DC shunt motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Voltage control method</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Ward Leonard system of speed control</li>
+</ul>
+<hr>
+<h3 id="q21">Q21: Why starters are required to start D.C motors in industries?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Regulate the field voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Reduce the armature current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Control the armature reaction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Smooth operation of motors</li>
+</ul>
+<hr>
+<h3 id="q22">Q22: Which insulating material belongs to class 'B' insulation?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cotton</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Bamboo</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fiber glass</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Leatheroid paper</li>
+</ul>
+<hr>
+<h3 id="q23">Q23: What is the temperature value of class F insulation?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">90°C</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">105°C</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">120°C</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">155°C</li>
+</ul>
+<hr>
+<h3 id="q24">Q24: Which type of D.C motor is used for constant speed drives?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">DC series motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">DC shunt motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential long shunt compound motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential short shunt compound motor</li>
+</ul>
+<hr>
+<h3 id="q25">Q25: Which type of DC motor is used in elevators?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">DC series motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">DC shunt motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">DC differential compound motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">DC cumulative compound motor</li>
+</ul>
+<hr>
+<h3 id="q26">Q26: Which method of speed control gives below the rated speed in DC series motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field diverter method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Tapped field method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Voltage control method</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature diverter method</li>
+</ul>
+<hr>
+<h3 id="q27">Q27: What is the effect, if a four point starter resistance is cutoff during running?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor stopped</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Runs at slow speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs at very high speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs at reverse direction</li>
+</ul>
+<hr>
+<h3 id="q28">Q28: Why carbon composition brush requires in the armature circuit to operate the D.C motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increases the starting torque</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protects from armature reaction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protects armature from over loading</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Reduces the spark in the commutator segment</li>
+</ul>
+<hr>
+<h3 id="q29">Q29: Why series motor produce high torque and speed initially without load?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Absence of back emf</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Load current flows through field winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature current and field current are same</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series field winding wound with thick wire</li>
+</ul>
+<hr>
+<h3 id="q30">Q30: Why the series field is short circuited at the time of starting in differential compound motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To reduce the starting current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To increase the speed of motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To decrease the speed of motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To maintain proper direction of rotation</li>
+</ul>
+<hr>
+<h3 id="q31">Q31: Which is the most effective method of balancing armature?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Static balancing</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Dynamic balancing</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Attached with counter balancing</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Plugged with lead weight balancing</li>
+</ul>
+<hr>
+<h3 id="q32">Q32: Which material is used for starting resistance of DC starters?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Eureka</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Nichrome</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Manganin</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Constantine</li>
+</ul>
+<hr>
+<h3 id="q33">Q33: Which DC compound motor is operated at constant speed under varying load?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential long shunt</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cumulative long shunt</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential short shunt</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cumulative short shunt</li>
+</ul>
+<hr>
+<h3 id="q34">Q34: How No volt coil is connected in a three point starter with DC shunt motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Directly connected to supply</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Connected in series with armature</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Connected in parallel with armature</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Connected in series with shunt field</li>
+</ul>
+<hr>
+<h3 id="q35">Q35: Which type of armature winding is illustrated?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q35.webp" alt="armature winding diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Duplex lap winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Triplex lap winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Simplex lap winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Quadruplex lap winding</li>
+</ul>
+<hr>
+<h3 id="q36">Q36: Which growler test for armature is illustrated?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q36.webp" alt="growler test diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Open coil test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Grounded coil test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shorted coil test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shorted commutator test</li>
+</ul>
+<hr>
+<h3 id="q37">Q37: Which speed control method is applied to obtain both below normal and above normal speed in DC motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Tapped field speed control</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Ward Leonard speed control</li>
+</ul>
+<hr>
+<h3 id="q38">Q38: Why commutators are sparking heavily?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Incorrect brush position</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Incorrect field connection</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Incorrect direction of rotation</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Incorrect armature connection</li>
+</ul>
+<hr>
+<h3 id="q39">Q39: What is the action of the induced emf in a running D.C motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Assists the applied voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Opposes the applied voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Increases the armature current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Decreases the armature current</li>
+</ul>
+<hr>
+<h3 id="q40">Q40: Which motor has this characteristics curve?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q40.webp" alt="motor characteristics curve">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cumulative compound motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound motor</li>
+</ul>
+<hr>
+<h3 id="q41">Q41: What is the purpose of resistor connected with holding coil in 4 point starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Limit current in NVC</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect the coil from short circuit</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect the motor from overload</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect the armature from short circuit</li>
+</ul>
+<hr>
+<h3 id="q42">Q42: Why the D.C series motor field winding is wound with thick wire?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To regulate field voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To carry the load current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To keep maximum inductance</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To reduce the armature reaction</li>
+</ul>
+<hr>
+<h3 id="q43">Q43: Which type of speed control of D.C series motor?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q43.webp" alt="speed control of D.C series motor diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Field parallel method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field diverter method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field tapping method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature diverter method</li>
+</ul>
+<hr>
+<h3 id="q44">Q44: Which type of D.C motor is suitable for shearing machines?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cumulative compound motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound motor</li>
+</ul>
+<hr>
+<h3 id="q45">Q45: Where D.C compound motors are preferred?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Constant load requirements</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Constant speed requirements</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">High starting torque requirements</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Constant speed under varying load requirements</li>
+</ul>
+<hr>
+<h3 id="q46">Q46: What is the necessity of starter for D.C motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Limit the field current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Limit the field voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Control the motor speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Limit the armature current</li>
+</ul>
+<hr>
+<h3 id="q47">Q47: Which type of instrument is used to test the armature winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Megger</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Growler</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Multimeter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Ohmmeter</li>
+</ul>
+<hr>
+<h3 id="q48">Q48: Why the holding coil of a 3 point starter is connected in series with shunt field?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To limit the load current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To run motor at low voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To hold the handle plunger firmly</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To protect the motor from high speed</li>
+</ul>
+<hr>
+<h3 id="q49">Q49: What is the best method to change the DOR of a compound motor without change of its characteristics?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Change armature current direction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Change shunt field current direction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Change series field current direction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Change the current in armature and shunt field together</li>
+</ul>
+<hr>
+<h3 id="q50">Q50: What is the purpose of NVC connected in series with the field in 3 point starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To improve the torque</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the field current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To decrease the back emf</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To prevent increase in speed</li>
+</ul>
+<hr>
+<h3 id="q51">Q51: Which type of DC motor is used for sudden application of heavy loads?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Differential compound motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cumulative compound motor</li>
+</ul>
+<hr>
+<h3 id="q52">Q52: Which speed control method is used in food mixture motors?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Voltage control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field diverter control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature diverter method</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Series field tapping method</li>
+</ul>
+<hr>
+<h3 id="q53">Q53: Which speed control system provides a smooth variation of speed from zero to above normal?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Field diverter control</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Ward-Leonard system control</li>
+</ul>
+<hr>
+<h3 id="q54">Q54: What is the purpose of tapes in winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Insulate slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Bind the coils</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Wrap the conductor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Insulate exposed conductors</li>
+</ul>
+<hr>
+<h3 id="q55">Q55: Which type of DC armature winding the front pitch ($Y_f$) is greater than back pitch ($Y_b$)?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Lap winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Wave winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Progressive winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Retrogressive winding</li>
+</ul>
+<hr>
+<h3 id="q56">Q56: What reduces the cross sectional area of core material for VA rating?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Dynamo sheet</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Low alloy sheet</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">High alloy sheet</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Normal steel sheet</li>
+</ul>
+<hr>
+<h3 id="q57">Q57: How to obtain opposite polarity in adjacent poles of a 4 pole DC motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Varying the number of turns in coil</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Making series connection of coils</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Making parallel connection of coils</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Making current flow in different direction</li>
+</ul>
+<hr>
+<h3 id="q58">Q58: What is the operation in the rewinding process?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q58.webp" alt="rewinding process operation">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cleaning of slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Removing of winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Removing of wedges</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cutting of winding wire</li>
+</ul>
+<hr>
+<h3 id="q59">Q59: Which insulating material used in winding is a highly non -hygroscopic and possess good electrical strength?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Empire cloth</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Triplex paper</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Millinex paper</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Leatheroid paper</li>
+</ul>
+<hr>
+<h3 id="q60">Q60: Which type of armature winding is illustrated?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q60.webp" alt="armature winding type illustrated">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Triplex wave winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Duplex wave winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Progressive lap winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Retrogressive lap winding</li>
+</ul>
+<hr>
+<h3 id="q61">Q61: Calculate the average pitch ($Y_A$) for retrogressive wave winding, if No. of armature conductor =14, No. of slots=7, No. of poles 2</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">4</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">6</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">8</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">14</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+\[\]
+$$Y_A = \frac{Z \pm 2}{P}$$
+\[\]
+Where:\[\]
+$Z$ = Number of armature conductors\[\]
+$P$ = Number of poles\[\]
+For Progressive winding, use $+2$\[\]
+For Retrogressive winding, use $-2$\[\]
+
+Given:\[\]
+Number of conductors ($Z$) = $14$\[\]
+Number of poles ($P$) = $2$\[\]
+Winding type = Retrogressive\[\]
+
+Calculation:\[\]
+
+Since it is a retrogressive winding, we use the minus sign:\[\]
+
+$$Y_A = \frac{Z - 2}{P}$$\[\]
+
+$$Y_A = \frac{14 - 2}{2}$$\[\]
+
+$$Y_A = \frac{12}{2}$$\[\]
+
+$$Y_A = 6$$
+
+</details>
+<hr>
+<h3 id="q62">Q62: Which type of test is illustrated for the armature after rewound?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q62.webp" alt="armature test illustrated">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Open coil test</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Shorted coil test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Voltage drop test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Grounded coil test</li>
+</ul>
+<hr>
+<h3 id="q63">Q63: Why the newly rewound armature must be preheated before varnishing?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Drive out the moisture from it</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Help for quick drying of varnish</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Make easy to penetrate varnish inside</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain uniform spreading of varnishing</li>
+</ul>
+<hr>
+<h3 id="q64">Q64: How the direction of rotation of a DC compound motor is changed?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">By changing the direction of armature current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By interchanging the supply terminals</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By changing the direction of both field and armature current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By changing the direction of series field current</li>
+</ul>
+<hr>
+<h3 id="q65">Q65: What is the effect in a D.C shunt motor, if its supply terminals are interchanged?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs in slow speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs in high speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Runs in the same direction</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs in the reverse direction</li>
+</ul>
+<hr>
+<h3 id="q66">Q66: What is the speed, if field winding of a DC shunt motor is in open circuit?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Stop running</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor runs normally</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs at slow speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Runs in very high speed</li>
+</ul>
+<hr>
+<h3 id="q67">Q67: What is the reason for reduction in speed of a D.C shunt motor from no load to full load?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt field current increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt field current decreases</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Armature voltage drop increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Armature voltage drop decreases</li>
+</ul>
+<hr>
+<h3 id="q68">Q68: Which winding fault is determined by the test?</h3>
+<img src="/assets/img/posts/secondyear/theory/m2-q68.webp" alt="winding fault test">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Open coil fault</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short coil fault</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Grounded coil fault</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Grounded core fault</li>
+</ul>
+<hr>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true}, 
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    <script src="js/layout.js"></script>
+<script src="js/mcq.js"></script> 
+  </body>
+</html>

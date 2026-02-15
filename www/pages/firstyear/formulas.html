@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhmLaws - First Year - Transformer</title>
+    <base href="../../../">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/post.css">
+<link rel="stylesheet" href="lib/katex/katex.min.css">
+<script src="lib/katex/katex.min.js"></script>
+<script src="lib/katex/contrib/auto-render.min.js"></script> 
+   <style>
+        /* --- General Reset & Variables --- */
+        :root {
+            --primary-blue: #1d4ed8; /* Tailwind blue-700 */
+            --lighter-blue: #2563eb; /* Tailwind blue-600 */
+            --border-blue: #3b82f6;  /* Tailwind blue-500 */
+            --text-light: #ff152a;   /* Tailwind gray-600 */
+            --text-header: #5a6f9b;  /* Tailwind slate-700 */
+            --bg-gray: #f8fafc;      /* Tailwind gray-50 */
+            --border-gray: #e2e8f0;  /* Tailwind gray-200 */
+            --border-darker: #cbd5e1;
+        }
+
+       
+
+               /* --- Typography --- */
+        h1.main-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            h1.main-title { font-size: 2.25rem; } /* text-4xl */
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(---text-muted);
+            margin-bottom: 2rem;
+        }
+
+        h3.section-title {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600;
+            color: var(--lighter-blue);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        h4.sub-section-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 500;
+            color: var(--text-header);
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .text-italic { font-style: italic; }
+        .text-muted { color: var(--text-light); }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-2 { margin-top: 0.5rem; }
+
+        /* --- Formula Box Styles --- */
+        .formula-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .formula {
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--bg-color);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(255,34,26,0.1);
+        }
+
+        /* --- Table Styles --- */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-gray);
+            margin-top: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-color);
+            min-width: 100%;
+        }
+
+        th {
+            background-color: var(--bg-gray);
+            font-weight: 600;
+            color: var(--text-header);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem; /* text-sm */
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-gray);
+            font-size: 0.875rem; /* text-sm */
+        }
+
+        /* --- Responsive Table (Mobile Cards) --- */
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid var(--border-darker);
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+                background: var(--bg-color);
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding-left: 45%;
+                text-align: right;
+                border-bottom: 1px dashed var(--border-gray);
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            td:last-child {
+                border-bottom: none;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 40%;
+                padding-left: 1rem;
+                font-weight: bold;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.8rem;
+                color: #64748b; /* slate-500 */
+            }
+
+            /* Specific handling for the "Types of Power" table */
+            .table-types-of-power tr {
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem;
+            }
+            .table-types-of-power td:first-child {
+                text-align: center;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-gray);
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            .table-types-of-power td:first-child::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<div class="post-container">
+            
+            <h1 class="post-title">Transformer</h1>
+            <p class="post-subtitle">Theory, Module-13</p>
+            <div class="post-meta">Posted May 13, 2025  <span>By <strong><a href="https://roniui.github.io" style="color:#ff7300">Roni</a></strong></span></div>
+          
+    <main>
+
+    <div class="container">
+        <h1 class="main-title">
+            ⚡ ITI Electrician 1st Year – Complete Formula Sheet (With Units)
+        </h1>
+        <p class="subtitle">
+            Comprehensive list of formulas for ITI Electrician 1st Year Trade Theory.
+        </p>
+
+        <div class="formula-section">
+            <h3 class="section-title">⚡️Electric Charge</h3>
+            <div class="formula">
+                \[Q = I \times t\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Charge</td>
+                            <td data-label="Symbol">Q</td>
+                            <td data-label="Unit">Coulomb (C)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Current</td>
+                            <td data-label="Symbol">I</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Time</td>
+                            <td data-label="Symbol">t</td>
+                            <td data-label="Unit">Second (s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🧮 Ohm’s Law</h3>
+            <div class="formula">
+                \[V = I \times R\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Voltage</td>
+                            <td data-label="Symbol">V</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Current</td>
+                            <td data-label="Symbol">I</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🧮 Resistance – Derived Formulas</h3>
+            <div class="formula">
+                \[R = \frac{V}{I}\]
+                \[R = \frac{W}{I^2}\]
+                \[R = \frac{V^2}{W}\]
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula</th>
+                            <th>Based On</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Formula">\(R = \frac{V}{I}\)</td>
+                            <td data-label="Based On">Ohm’s Law</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Formula">\(R = \frac{W}{I^2}\)</td>
+                            <td data-label="Based On">Power Formula \(W = I^2 R\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Formula">\(R = \frac{V^2}{W}\)</td>
+                            <td data-label="Based On">Power Formula \(W = \frac{V^2}{R}\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔗 Resistors in Series & Parallel</h3>
+
+            <h4 class="sub-section-title">Resistors in Series:</h4>
+            <div class="formula" style="font-size: 0.9rem">
+                \[R_{\text{total}} = R_1 + R_2 + \ldots + R_n\]
+            </div>
+
+            <h4 class="sub-section-title">Resistors in Parallel:</h4>
+            <div class="formula" style="font-size: 0.9rem">
+                \[\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots + \frac{1}{R_n}\]
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Total Resistance</td>
+                            <td data-label="Symbol">\(R_{total}\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🧲 Inductors in Series & Parallel</h3>
+            <h4 class="sub-section-title">Inductors in Series:</h4>
+            <div class="formula" style="font-size: 1rem">
+                \[L_{\text{total}} = L_1 + L_2 + \cdots + L_n\]
+            </div>
+            <h4 class="sub-section-title">Inductors in Parallel:</h4>
+            <div class="formula" style="font-size: 1rem">
+                \[\frac{1}{L_{\text{total}}} = \frac{1}{L_1} + \frac{1}{L_2} + \cdots + \frac{1}{L_n}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Inductance</td>
+                            <td data-label="Symbol">L</td>
+                            <td data-label="Unit">Henry (H)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Total Inductance</td>
+                            <td data-label="Symbol">\(L_{total}\)</td>
+                            <td data-label="Unit">Henry (H)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">📏 Resistivity & Conductivity</h3>
+            <h4 class="sub-section-title">Resistivity Formula:</h4>
+            <div class="formula">
+                \[R = \rho \frac{L}{A}\]
+            </div>
+            <h4 class="sub-section-title">Conductivity Formula:</h4>
+            <div class="formula">
+                \[\sigma = \frac{1}{\rho}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Resistivity</td>
+                            <td data-label="Symbol">\(\rho\)</td>
+                            <td data-label="Unit">Ohm-meter (\(\Omega \cdot m\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Length</td>
+                            <td data-label="Symbol">L</td>
+                            <td data-label="Unit">Meter (m)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Area (Cross-section)</td>
+                            <td data-label="Symbol">A</td>
+                            <td data-label="Unit">Meter² (m²)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Conductivity</td>
+                            <td data-label="Symbol">\(\sigma\)</td>
+                            <td data-label="Unit">Siemens/meter (S/m)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔁 Kirchhoff’s Laws</h3>
+            <h4 class="sub-section-title">KCL (Kirchhoff’s Current Law):</h4>
+            <p class="mb-2">The algebraic sum of currents entering a junction is equal to the algebraic sum of currents leaving the junction.</p>
+            <div class="formula">
+                \[\sum I_{\text{in}} = \sum I_{\text{out}}\]
+            </div>
+            <p class="text-italic text-muted mb-4">Unit for Current: Ampere (A)</p>
+
+            <h4 class="sub-section-title">KVL (Kirchhoff’s Voltage Law):</h4>
+            <p class="mb-2">The algebraic sum of all voltages around any closed loop in a circuit is equal to zero.</p>
+            <div class="formula">
+                \[\sum V = 0\]
+            </div>
+            <p class="text-italic text-muted mb-4">Unit for Voltage: Volt (V)</p>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🧲 Electromagnetic Induction (Faraday's Law)</h3>
+            <div class="formula">
+                \[e = -N \frac{d\phi}{dt}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Induced EMF</td>
+                            <td data-label="Symbol">e</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Number of Turns</td>
+                            <td data-label="Symbol">N</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Magnetic Flux</td>
+                            <td data-label="Symbol">\(\phi\)</td>
+                            <td data-label="Unit">Weber (Wb)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Time</td>
+                            <td data-label="Symbol">t</td>
+                            <td data-label="Unit">Second (s)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="text-italic" data-label="">
+                                The negative sign indicates the direction of the induced EMF (Lenz's Law).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔌 Capacitors in Series & Parallel</h3>
+            <h4 class="sub-section-title">Capacitors in Series:</h4>
+            <div class="formula" style="font-size: 1rem">
+                \[\frac{1}{C_{\text{total}}} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots + \frac{1}{C_n}\]
+            </div>
+            <h4 class="sub-section-title">Capacitors in Parallel:</h4>
+            <div class="formula" style="font-size: 1rem">
+                \[C_{\text{total}} = C_1 + C_2 + \cdots + C_n\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Capacitance</td>
+                            <td data-label="Symbol">C</td>
+                            <td data-label="Unit">Farad (F)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Total Capacitance</td>
+                            <td data-label="Symbol">\(C_{total}\)</td>
+                            <td data-label="Unit">Farad (F)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🧮 Electrical Energy</h3>
+            <div class="formula">
+                \[E = P \times t\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Energy</td>
+                            <td data-label="Symbol">E</td>
+                            <td data-label="Unit">Watt-hour (Wh), Kilowatt-hour (kWh), Joule (J)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Power</td>
+                            <td data-label="Symbol">P</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Time</td>
+                            <td data-label="Symbol">t</td>
+                            <td data-label="Unit">Hour (h) or Second (s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">💡 Electric Work</h3>
+            <div class="formula">
+                \[W = V \times I \times t\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Work Done</td>
+                            <td data-label="Symbol">W</td>
+                            <td data-label="Unit">Joule (J)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Voltage</td>
+                            <td data-label="Symbol">V</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Current</td>
+                            <td data-label="Symbol">I</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Time</td>
+                            <td data-label="Symbol">t</td>
+                            <td data-label="Unit">Second (s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 id="joules-law" class="section-title">🔥 Joule’s Law of Heating</h3>
+            <div class="formula">
+                \[H = I^2 R t\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Heat Produced</td>
+                            <td data-label="Symbol">H</td>
+                            <td data-label="Unit">Joule (J)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Current</td>
+                            <td data-label="Symbol">I</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Time</td>
+                            <td data-label="Symbol">t</td>
+                            <td data-label="Unit">Second (s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔋 Electric Power (DC) – 3 Formulas</h3>
+            <div class="formula">
+                \[P = V \times I\]
+                \[P = I^2 \times R\]
+                \[P = \frac{V^2}{R}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Power</td>
+                            <td data-label="Symbol">P</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Voltage</td>
+                            <td data-label="Symbol">V</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Current</td>
+                            <td data-label="Symbol">I</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">⚡ AC Power – Single & Three Phase</h3>
+            <div class="formula">
+                \[P = V \times I \times \cos\phi \quad \] \[\text{(Single Phase)}\]
+                \[P = \sqrt{3} \times V \times I \times \cos\phi \quad \]\[\text{(Three Phase)}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Active Power</td>
+                            <td data-label="Symbol">P</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Line Voltage</td>
+                            <td data-label="Symbol">V</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Line Current</td>
+                            <td data-label="Symbol">I</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Power Factor</td>
+                            <td data-label="Symbol">\(\cos\phi\)</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">⚡ Types of Power</h3>
+
+            <div class="formula">
+                \[ \text{Single Phase}\]
+                \[S = V \times I \] 
+                \[P = V \times I \times \cos\phi \]
+                \[Q = V \times I \times \sin\phi \]
+                \[\]
+                \[ \text{Three Phase}\]
+                \[S = \sqrt{3} \times V \times I \]        
+                \[P = \sqrt{3} \times V \times I \times \cos\phi \]        
+                \[Q = \sqrt{3} \times V \times I \times \sin\phi \]
+                \[\]
+                \[ \text{Power Triangle}\]
+                \[S^2 = P^2 + Q^2 \]
+            </div>
+
+            <div class="table-wrapper">
+                <table class="table-types-of-power">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Apparent Power</td>
+                            <td data-label="Symbol">S</td>
+                            <td data-label="Unit">Volt-Ampere (VA)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Active Power</td>
+                            <td data-label="Symbol">P</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Reactive Power</td>
+                            <td data-label="Symbol">Q</td>
+                            <td data-label="Unit">Volt-Ampere Reactive (VAR)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Power Factor Angle</td>
+                            <td data-label="Symbol">\(\phi\)</td>
+                            <td data-label="Unit">Radian / Degree</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🧠 Power Factor – 3 Formulas</h3>
+            <div class="formula">
+                \[\cos\phi = \frac{P}{S}\]
+                \[\cos\phi = \frac{R}{Z}\]
+                \[\cos\phi = \frac{1}{\sqrt{1 + \left( \frac{Q}{P} \right)^2 }}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Power Factor</td>
+                            <td data-label="Symbol">\(\cos\phi\)</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Active Power</td>
+                            <td data-label="Symbol">P</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Apparent Power</td>
+                            <td data-label="Symbol">S</td>
+                            <td data-label="Unit">VA</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Impedance</td>
+                            <td data-label="Symbol">Z</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Reactive Power</td>
+                            <td data-label="Symbol">Q</td>
+                            <td data-label="Unit">VAR</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔂 AC Waveform Characteristics</h3>
+            <h4 class="sub-section-title">RMS (Root Mean Square) Values:</h4>
+            <div class="formula">
+                \[V_{rms} = \frac{V_m}{\sqrt{2}} \approx 0.707 \times V_m\]
+                \[I_{rms} = \frac{I_m}{\sqrt{2}} \approx 0.707 \times I_m\]
+            </div>
+            <h4 class="sub-section-title">Average Value (for half cycle of sine wave):</h4>
+            <div class="formula">
+                \[V_{avg} = \frac{2 V_m}{\pi} \approx 0.637 \times V_m\]
+                \[I_{avg} = \frac{2 I_m}{\pi} \approx 0.637 \times I_m\]
+            </div>
+            <h4 class="sub-section-title">Form Factor:</h4>
+            <div class="formula" style="font-size: 0.9rem">
+                \[\text{Form Factor} = \frac{V_{rms}}{V_{avg}} \approx 1.11\]
+            </div>
+            <h4 class="sub-section-title">Peak Factor (Crest Factor):</h4>
+            <div class="formula" style="font-size: 0.9rem">
+                \[\text{Peak Factor} = \frac{V_m}{V_{rms}} \approx 1.414\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Peak Voltage</td>
+                            <td data-label="Symbol">\(V_m\)</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Peak Current</td>
+                            <td data-label="Symbol">\(I_m\)</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">RMS Voltage</td>
+                            <td data-label="Symbol">\(V_{rms}\)</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">RMS Current</td>
+                            <td data-label="Symbol">\(I_{rms}\)</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Average Voltage</td>
+                            <td data-label="Symbol">\(V_{avg}\)</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Average Current</td>
+                            <td data-label="Symbol">\(I_{avg}\)</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Form Factor</td>
+                            <td data-label="Symbol">-</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Peak Factor</td>
+                            <td data-label="Symbol">-</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">📐 Impedance and Reactance</h3>
+            <div class="formula">
+                \[Z = \sqrt{R^2 + X^2}\]
+                \[X = X_L - X_C\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Impedance</td>
+                            <td data-label="Symbol">Z</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Resistance</td>
+                            <td data-label="Symbol">R</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Total Reactance</td>
+                            <td data-label="Symbol">X</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Inductive Reactance</td>
+                            <td data-label="Symbol">\(X_L\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Capacitive Reactance</td>
+                            <td data-label="Symbol">\(X_C\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🌀 Inductive & Capacitive Reactance</h3>
+            <div class="formula">
+                \[X_L = 2\pi f L\]
+                \[X_C = \frac{1}{2\pi f C}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Inductive Reactance</td>
+                            <td data-label="Symbol">\(X_L\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Capacitive Reactance</td>
+                            <td data-label="Symbol">\(X_C\)</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Frequency</td>
+                            <td data-label="Symbol">f</td>
+                            <td data-label="Unit">Hertz (Hz)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Inductance</td>
+                            <td data-label="Symbol">L</td>
+                            <td data-label="Unit">Henry (H)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Capacitance</td>
+                            <td data-label="Symbol">C</td>
+                            <td data-label="Unit">Farad (F)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">⚙️ Admittance</h3>
+            <div class="formula">
+                \[Y = \frac{1}{Z}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Admittance</td>
+                            <td data-label="Symbol">Y</td>
+                            <td data-label="Unit">Siemens (S) or mho (\(\mho\))</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Impedance</td>
+                            <td data-label="Symbol">Z</td>
+                            <td data-label="Unit">Ohm (\(\Omega\))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔋 Capacitance</h3>
+            <div class="formula">
+                \[C = \frac{\varepsilon_0 \varepsilon_r A}{d}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Capacitance</td>
+                            <td data-label="Symbol">C</td>
+                            <td data-label="Unit">Farad (F)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Permittivity of Free Space</td>
+                            <td data-label="Symbol">\(\varepsilon_0\)</td>
+                            <td data-label="Unit">Farad/meter (F/m) \(\approx 8.854 \times 10^{-12}\) F/m</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Relative Permittivity (Dielectric Constant)</td>
+                            <td data-label="Symbol">\(\varepsilon_r\)</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Area of Plates</td>
+                            <td data-label="Symbol">A</td>
+                            <td data-label="Unit">Meter² (m²)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Distance between Plates</td>
+                            <td data-label="Symbol">d</td>
+                            <td data-label="Unit">Meter (m)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">🔄 Transformer Formulas</h3>
+            <h4 class="sub-section-title">Voltage and Turns Ratio:</h4>
+            <div class="formula">
+                \[\frac{V_1}{V_2} = \frac{N_1}{N_2}\]
+            </div>
+            <h4 class="sub-section-title">Current and Turns Ratio (for Ideal Transformer):</h4>
+            <div class="formula">
+                \[\frac{I_2}{I_1} = \frac{N_1}{N_2}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Primary Voltage</td>
+                            <td data-label="Symbol">\(V_1\)</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Secondary Voltage</td>
+                            <td data-label="Symbol">\(V_2\)</td>
+                            <td data-label="Unit">Volt (V)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Primary Turns</td>
+                            <td data-label="Symbol">\(N_1\)</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Secondary Turns</td>
+                            <td data-label="Symbol">\(N_2\)</td>
+                            <td data-label="Unit">Unitless</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Primary Current</td>
+                            <td data-label="Symbol">\(I_1\)</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Secondary Current</td>
+                            <td data-label="Symbol">\(I_2\)</td>
+                            <td data-label="Unit">Ampere (A)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">📐 Constants & Conversions</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Value</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">1 Kilowatt-hour (kWh)</td>
+                            <td data-label="Value">1000 Wh = 3,600,000 J</td>
+                            <td data-label="Unit">Energy</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">1 Horsepower (HP)</td>
+                            <td data-label="Value">746 W (Electrical HP)</td>
+                            <td data-label="Unit">Power</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Speed of Light (in vacuum)</td>
+                            <td data-label="Value">\(3 \times 10^8\)</td>
+                            <td data-label="Unit">m/s</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Permittivity of free space</td>
+                            <td data-label="Value">\(8.854 \times 10^{-12}\)</td>
+                            <td data-label="Unit">F/m</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Permeability of free space</td>
+                            <td data-label="Value">\(4\pi \times 10^{-7}\)</td>
+                            <td data-label="Unit">H/m</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">⚙️ Efficiency of Electrical Machines</h3>
+            <div class="formula" style="font-size: 1rem">
+                \[\eta = \frac{\text{Output Power}}{\text{Input Power}} \times 100\%\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Efficiency</td>
+                            <td data-label="Symbol">\(\eta\)</td>
+                            <td data-label="Unit">Percent (%)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Output Power</td>
+                            <td data-label="Symbol">-</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Input Power</td>
+                            <td data-label="Symbol">-</td>
+                            <td data-label="Unit">Watt (W)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-italic mt-2">Applies to motors, transformers, generators, etc.</p>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">Battery Efficiency</h3>
+            <div class="formula" style="font-size: 0.9rem">
+                \[\eta = \frac{\text{Output Energy}}{\text{Input Energy}} \times 100\%\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Efficiency</td>
+                            <td data-label="Symbol">\(\eta\)</td>
+                            <td data-label="Unit">Percent (%)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Output Energy</td>
+                            <td data-label="Symbol">-</td>
+                            <td data-label="Unit">Watt-hour (Wh)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Input Energy</td>
+                            <td data-label="Symbol">-</td>
+                            <td data-label="Unit">Watt-hour (Wh)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <h3 class="section-title">⏱ Frequency & Time Period</h3>
+            <div class="formula">
+                \[f = \frac{1}{T}\]
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Symbol</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Quantity">Frequency</td>
+                            <td data-label="Symbol">f</td>
+                            <td data-label="Unit">Hertz (Hz)</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Quantity">Time Period</td>
+                            <td data-label="Symbol">T</td>
+                            <td data-label="Unit">Second (s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true}, 
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    <script src="js/layout.js"></script>
+<script src="js/mcq.js"></script> 
+  </body>
+</html>

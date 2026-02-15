@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhmLaws - Second Year - AC Three Phase Motor</title>
+    <base href="../../../">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/post.css">
+<link rel="stylesheet" href="lib/katex/katex.min.css">
+<script src="lib/katex/katex.min.js"></script>
+<script src="lib/katex/contrib/auto-render.min.js"></script> 
+
+</head>
+<body>
+<div class="post-container">
+            
+            <h1 class="post-title">AC Three Phase Motor</h1>
+            <p class="post-subtitle">Theory, Module-3</p>
+            <div class="post-meta">Posted May 13, 2025  <span>By <strong><a href="https://roniui.github.io" style="color:#ff7300">Roni</a></strong></span></div>
+          
+    <main>
+<hr>
+<br>
+<div onclick="checkAnswer(this)" style="text-align: center;">⭕️ Show all Answers</div>
+<br><hr>
+
+
+<h3 id="q1">Q1: What is the formula to calculate the slip speed ($N_{slip}$) of 3 phase squirrel cage induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">$N_{slip} = N_s - N_r$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$N_{slip} = N_r - N_s$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$N_{slip} = \frac{N_s - N_r}{N_s}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$N_{slip} = \frac{N_s - N_r}{N_r}$</li>
+</ul>
+<hr>
+<h3 id="q2">Q2: What is the type of control circuit?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q2.webp" alt="control circuit diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Inching control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">ON remote control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">OFF remote control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Forward & reverse control</li>
+</ul>
+<hr>
+<h3 id="q3">Q3: Which formula is used to calculate the total electrical degree in stator of an A.C motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Total electrical degree = 180 / No. of slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Total electrical degree = 180 x No. of slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Total electrical degree = 180 / No. of poles</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Total electrical degree = $180^\circ \times \text{No. of poles}$</li>
+</ul>
+<hr>
+<h3 id="q4">Q4: What is the name of the A.C motor starter?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q4.webp" alt="AC motor starter diagram">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">DOL starter</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Auto transformer starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Semi automatic star delta starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fully automatic star delta starter</li>
+</ul>
+<hr>
+<h3 id="q5">Q5: What is the formula to find synchronous speed of a A.C 3 phase induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Synchronous speed = $\frac{120F}{P}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Synchronous speed = $\frac{120P}{F}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Synchronous speed = $\frac{120}{PF}$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Synchronous speed = $\frac{PF}{120}$</li>
+</ul>
+<hr>
+<h3 id="q6">Q6: What is the fuse rate to run a 10 HP three phase induction motor at full load?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">10 A</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">15 A</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">25 A</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">30 A</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+\[P = 10 \times 746 \text{ Watts}\]
+  \[P = 7460 \text{ Watts}\]
+
+Assuming standard values for a 3-phase system:
+\[ Voltage (V) = 415 \text{ V}\]
+\[ Power Factor (\cos\phi) \approx 0.8\]
+\[ Efficiency (\eta) \approx 0.85\]
+\[I_{FL} = \frac{P}{\sqrt{3} \times V \times \cos\phi \times \eta}\]
+\[I_{FL} = \frac{7460}{1.732 \times 415 \times 0.8 \times 0.85}\]
+\[I_{FL} = \frac{7460}{488.7}\]
+\[I_{FL} \approx 15.26 \text{ Amps}\]
+
+To handle the starting current (which is higher than full load current), the fuse rating is typically calculated as **1.5 times** the full load current.
+
+\[\text{Fuse Rating} = I_{FL} \times 1.5\]
+\[\text{Fuse Rating} = 15.26 \times 1.5\]
+\[\text{Fuse Rating} \approx 22.89 \text{ Amps}\]
+
+The nearest standard fuse rating available above 22.89 A is **25 A**.
+
+</details>
+<hr>
+<h3 id="q7">Q7: What is the name of the contact marked as 'X'?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q7.webp" alt="contact marked X">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Star contact</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Delta contact</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Auxiliary contact</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Over load relay contact</li>
+</ul>
+<hr>
+<h3 id="q8">Q8: What is the type of A.C motor stator winding?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q8.webp" alt="AC motor stator winding">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Single layer basket winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Double layer basket winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Involute coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Diamond coil winding</li>
+</ul>
+<hr>
+<h3 id="q9">Q9: Which formula is used to calculate percentage slip of an AC 3 phase Induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">$\frac{N_s - N_r}{N_s} \times 100$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\frac{N_r - N_s}{N_s} \times 100$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\frac{N_s - N_r}{N_r} \times 100$</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\frac{N_r - N_s}{N_r} \times 100$</li>
+</ul>
+<hr>
+<h3 id="q10">Q10: Which operation the control circuit is used?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q10.webp" alt="control circuit operation">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Remote control</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Inching</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Sequential control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Forward and reverse</li>
+</ul>
+<hr>
+<h3 id="q11">Q11: What is the phase displacement between windings in 3 phase motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">90°</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">120°</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">180°</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">360°</li>
+</ul>
+<hr>
+<h3 id="q12">Q12: What is the name of the part marked as X?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q12.webp" alt="motor part marked X">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shaft</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Brushes</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Bearings</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Slip rings</li>
+</ul>
+<hr>
+<h3 id="q13">Q13: What is the name of AC coil winding?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q13.webp" alt="AC coil winding">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Half coil winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Whole coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Single layer winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Double layer winding</li>
+</ul>
+<hr>
+<h3 id="q14">Q14: What is the name of the coil winding?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q14.webp" alt="coil winding type">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Concentric coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Distributed coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Mesh shaped coil winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Diamond mesh shaped coil winding</li>
+</ul>
+<hr>
+<h3 id="q15">Q15: Which speed is called as synchronous speed in 3 phase induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">No load speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Full load speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Rotating magnetic field speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Relative speed between stator and rotor</li>
+</ul>
+<hr>
+<h3 id="q16">Q16: What is the name of the starter symbol?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q16.webp" alt="starter symbol">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">D.O.L starter</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Auto transformer starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Automatic star/delta starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Semi automatic star/delta starter</li>
+</ul>
+<hr>
+<h3 id="q17">Q17: Name the part marked as 'X' of the winding machine?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q17.webp" alt="winding machine part X">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Mandrel</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Wire feed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Wire guides</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Spool carrier</li>
+</ul>
+<hr>
+<h3 id="q18">Q18: What is the electrical degree of 6 pole stator of motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">360°</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">720°</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">1080°</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">1440°</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+The total electrical degrees in a motor is calculated as:
+
+\[\text{Total Electrical Degrees} =\]\[ 180^\circ \times \text{Number of Poles}\]
+\[\text{Number of poles (P) = 6}\]
+
+\[\text{Total Electrical Degrees} = 180^\circ \times 6\]
+
+\[\text{Total Electrical Degrees} = 1080^\circ\]
+
+</details>
+<hr>
+<h3 id="q19">Q19: Calculate the number of coils per phase per pair of poles of 3 phase motor having 2 pole, 24 slots, 12 coils?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">1</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">2</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">3</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">4</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+<gh style="font-size: 12px">
+\[N_{cpp} = \frac{\text{Total Number of Coils}}{\text{Number of Phases} \times \text{Number of Pole Pairs}}\]
+</gh>
+**Given:**
+\[\text{Total Number of Coils} = 12\]
+\[\text{Number of Phases} = 3\]
+\[\text{Number of Poles (P)} = 2\]
+
+A pair consists of 2 poles (North and South).
+\[\text{Pole Pairs} = \frac{P}{2} = \frac{2}{2} = 1\]
+
+Substitute the values into the main formula:
+
+\[N_{cpp} = \frac{12}{3 \times 1}\]
+
+\[N_{cpp} = \frac{12}{3}\]
+
+\[N_{cpp} = 4\]
+
+</details>
+<hr>
+<h3 id="q20">Q20: What is the name of the starter symbol?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q20.webp" alt="starter symbol diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Star delta starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Rheostatic starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Direct on-line starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Autotransformer starter</li>
+</ul>
+<hr>
+<h3 id="q21">Q21: What is the formula to calculate pitch factor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pitch Factor = Pole pitch / Winding pitch</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Pitch Factor = Winding pitch / Pole pitch</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pitch Factor = Number of slots / Number of poles</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Pitch Factor = Number of Poles / Number of Slots</li>
+</ul>
+<hr>
+<h3 id="q22">Q22: How pole pitch is measured in terms of slots in AC winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Total electrical degree / Number of slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Number of slots / Total electrical degree</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">No. of slots in the stator / No. of poles</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">No. of poles / No. of slots in the stator</li>
+</ul>
+<hr>
+<h3 id="q23">Q23: What is the formula to calculate the mean circumference of the coil?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">$L_m = L_{out} - L_{in} / 2$ cm</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">$L_m = (L_{in} + L_{out}) / 2$ cm</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$L_m = 2 \times (L_{out} - L_{in})$ cm</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$L_m = 2 \times (L_{in} + L_{out})$ cm</li>
+</ul>
+<hr>
+<h3 id="q24">Q24: What is the synchronous speed of a A.C 3 phase induction motor having 6 poles at a frequency of 50 Hertz?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">800 rpm</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">1000 rpm</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">1200 rpm</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">1440 rpm</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+
+The synchronous speed ($N_s$) of an AC induction motor is calculated as:
+
+\[N_s = \frac{120 \times f}{P}\]
+
+Where:
+\[f = Frequency in Hertz\]
+\[P = Number of poles\]
+
+**Given:**
+\[Frequency (f) = 50 \text{ Hz}\]
+\[Number of poles (P) = 6\]
+
+**Calculation:**
+
+\[N_s = \frac{120 \times 50}{6}\]
+
+\[N_s = \frac{6000}{6}\]
+
+\[N_s = 1000 \text{ rpm}\]
+
+</details>
+<hr>
+<h3 id="q25">Q25: Calculate the percentage slip in a 3 phase induction motor having 6 poles with a frequency of 50 Hertz rotating with actual speed of 960 rpm?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">2%</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">3%</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">4%</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">5%</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+
+**Formula:**
+\[N_s = \frac{120 \times f}{P}\]
+
+**Given:**
+\[Frequency (f) = 50 \text{ Hz}\]
+* Poles (P) = 6\]
+
+**Calculation:**
+\[N_s = \frac{120 \times 50}{6}\]
+
+\[N_s = \frac{6000}{6}\]
+
+\[N_s = 1000 \text{ rpm}\]
+
+**Formula:**
+
+ \[\text{ Slip} = \frac{N_s - N_r}{N_s} \times 100\]
+
+\[\text{ Slip} = \frac{1000 - 960}{1000} \times 100\]
+
+\[\text{ Slip} = \frac{40}{1000} \times 100\]
+
+\[\text{ Slip} = 0.04 \times 100\]
+
+\[\text{ Slip} = 4\%\]
+
+</details>
+<hr>
+<h3 id="q26">Q26: What is the rotor frequency of a 3 phase squirrel cage induction motor at the time of starting?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Equal to supply frequency</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">3 times less than supply frequency</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">3 times more than supply frequency</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">$\sqrt{3}$ times less than supply frequency</li>
+</ul>
+<hr>
+<h3 id="q27">Q27: How the voltage is received in the rotor of induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Direct connection from stator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Due to back emf produced in stator</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Direct connection to rotor from supply</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">By the transformer action of stator and rotor</li>
+</ul>
+<hr>
+<h3 id="q28">Q28: Which method is applied to control the speed of 3 phase squirrel cage induction motor from its rotor side?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cascade operation</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Changing applied voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Changing applied frequency</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Changing the number of poles</li>
+</ul>
+<hr>
+<h3 id="q29">Q29: Which loss of 3 phase induction motor is determined by blocked rotor test?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Copper loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Friction loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Hysteresis loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Eddy current loss</li>
+</ul>
+<hr>
+<h3 id="q30">Q30: Why pre heating is necessary for motors before varnishing in rewinding process?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To dry the varnish quickly in winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To easy flow of varnish in the winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To increase the insulation resistance value</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To drive out the moisture in between winding layers</li>
+</ul>
+<hr>
+<h3 id="q31">Q31: Which type of test is conducted using internal growler in AC motor winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Ground test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Polarity test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Continuity test</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Short circuit test</li>
+</ul>
+<hr>
+<h3 id="q32">Q32: Which device is used to test stator winding short and open fault?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Tong Tester</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Internal Growler</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">External Growler</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Digital multimeter</li>
+</ul>
+<hr>
+<h3 id="q33">Q33: What is the purpose of using thermal cutout in addition to fuse in A.C motor circuit?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect from heavy load</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect against high voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Allow for continuous over loading</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Protect against dead short circuit</li>
+</ul>
+<hr>
+<h3 id="q34">Q34: Which type of motor is used to provide high starting torque at variable speed?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Universal motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Permanent capacitor motor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">3 Phase slip ring induction motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">3 Phase single squirrel cage induction motor</li>
+</ul>
+<hr>
+<h3 id="q35">Q35: What is the relation between torque and slip in an A.C induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Slip increases torque decreases</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Slip increases torque increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Slip decreases torque increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Slip decreases torque decreases</li>
+</ul>
+<hr>
+<h3 id="q36">Q36: What is effect of A.C induction motor if rotor bar is in open circuit?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Vibration of shaft</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor will not start</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs in slow speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Over heating of motor</li>
+</ul>
+<hr>
+<h3 id="q37">Q37: Which type of wire is used for rewinding of A.C 3 phase motors?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Super enamelled copper wire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">PVC covered copper winding wire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Single cotton covered copper wire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Double cotton covered copper wire</li>
+</ul>
+<hr>
+<h3 id="q38">Q38: Which material is used as wedges in winding process?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Empire</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cotton</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Bamboo</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Terylene</li>
+</ul>
+<hr>
+<h3 id="q39">Q39: Which test in winding is essential before giving supply?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Ground test</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Polarity test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Open circuit test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit test</li>
+</ul>
+<hr>
+<h3 id="q40">Q40: Why the rotor bars are mounted in a slightly skewed position in 3 phase motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Generate maximum flux</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the stray losses</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Maintain the rotor speed constant</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Produce more uniform rotor field and torque</li>
+</ul>
+<hr>
+<h3 id="q41">Q41: Which loss is determined by no load test of 3 phase induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Iron loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Copper loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Friction loss</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Windage loss</li>
+</ul>
+<hr>
+<h3 id="q42">Q42: Which method of speed control two variable speeds only obtained in 3 phase motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">By rotor rheostat control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By changing applied frequency</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By changing the applied voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">By changing the number of stator poles</li>
+</ul>
+<hr>
+<h3 id="q43">Q43: Why slip ring induction motor is fitted with wound rotor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To reduce the slip</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To control the speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To reduce the losses</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To get high starting and running torque</li>
+</ul>
+<hr>
+<h3 id="q44">Q44: What is the function of timer in automatic star delta starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Trip at over load</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Switch ON at pre set time</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Change from star to delta</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Switch OFF at pre set time</li>
+</ul>
+<hr>
+<h3 id="q45">Q45: Which instrument is used to measure insulation resistance of a 3 phase induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Megger</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Multimeter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Shunt type ohmmeter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Series type ohmmeter</li>
+</ul>
+<hr>
+<h3 id="q46">Q46: Which test in winding is illustrated?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q46.webp" alt="winding test illustrated">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Polarity test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Ground test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Continuity test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit test</li>
+</ul>
+<hr>
+<h3 id="q47">Q47: What is the starting current of an A.C 3 phase induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">1 to 2 times of full load current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">2 to 3 times of full load current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">4 to 5 times of full load current</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">5 to 6 times of full load current</li>
+</ul>
+<hr>
+<h3 id="q48">Q48: Which method is used to control the speed of 3 phase induction motor from stator side?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">By cascade operation</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By rotor rheostat control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">By injecting emf in rotor circuit</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">By changing the applied frequency</li>
+</ul>
+<hr>
+<h3 id="q49">Q49: What is the speed control method of 3 phase induction motor?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q49.webp" alt="speed control method diagram">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Cascade operation method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Rotor rheostat control method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Changing applied voltage method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Injecting emf in rotor circuit method</li>
+</ul>
+<hr>
+<h3 id="q50">Q50: What are the two functional circuits incorporated with a three phase motor starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Open circuit and short circuit</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Closed circuit and open circuit</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit and closed circuit</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Control circuit and power circuit</li>
+</ul>
+<hr>
+<h3 id="q51">Q51: Which is the main property of leatheroid paper insulation?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Non moisturized material</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Highly non-hygroscopic</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Very good for class F insulation</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Better ageing and dielectric strength</li>
+</ul>
+<hr>
+<h3 id="q52">Q52: Which type of insulating material is selected for binding the coils and over hangs?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cotton sleeves</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Empire sleeves</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Terylene thread</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fibre glass tape</li>
+</ul>
+<hr>
+<h3 id="q53">Q53: Which insulation is used for cuffing in AC winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fibre glass tape</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Leatheroid paper</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Empire fiber glass tape</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Fabric based adhesive tape</li>
+</ul>
+<hr>
+<h3 id="q54">Q54: What refers coil in AC winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Number of turns connected in series</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Number of turns connected in parallel</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Number of turns under two similar poles</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Number of turns under two dissimilar poles</li>
+</ul>
+<hr>
+<h3 id="q55">Q55: Which type of AC winding the number of coil/pole/phase is more than one at different pitches?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Involute coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Diamond coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Flat loop over lapped winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Flat loop non-over lapped winding</li>
+</ul>
+<hr>
+<h3 id="q56">Q56: Calculate the number of coils /phase/pole for a 3 phase double layer distributed winding for a motor having 36 slots, 36 coils and 4 poles.</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">3 coils/phase/pole</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">6 coils/phase/pole</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">9 coils/phase/pole</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">12 coils/phase/pole</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+
+**Formula:**
+
+\[\text{Coils per Phase per Pole} =\]\[\frac{\text{Total Number of Coils}}{\text{Number of Phases} \times \text{Number of Poles}}\]
+
+**Given:**
+\[Total Number of Coils = 36\]
+\[Number of Phases = 3\]
+\[Number of Poles = 4\]
+
+**Calculation:**
+
+\[\text{Coils per Phase per Pole} = \frac{36}{3 \times 4}\]
+
+\[\text{Coils per Phase per Pole} = \frac{36}{12}\]
+
+\[\text{Coils per Phase per Pole} = 3\]
+
+</details>
+<hr>
+<h3 id="q57">Q57: What is the type of rewinding process?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q57.webp" alt="rewinding process type">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Hand winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Skein winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Former winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Machine winding</li>
+</ul>
+<hr>
+<h3 id="q58">Q58: Which type of starter is used to start and run the 3 phase slip ring induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Direct on-line starter</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Rotor rheostat starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Auto transformer starter</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Manual star-delta starter</li>
+</ul>
+<hr>
+<h3 id="q59">Q59: What is the function of collar?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Provides insulation around field</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Provides insulation for coil tapping</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Helps tightening material for flange</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Provides insulation for heat transfer from coil</li>
+</ul>
+<hr>
+<h3 id="q60">Q60: Which type of winding wire is used to wind submersible pump motors?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">PVC covered type</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Terylene thread type</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Super enamelled type</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Double cotton covered type</li>
+</ul>
+<hr>
+<h3 id="q61">Q61: What is the reason of long chord winding is avoided in AC motors?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Low efficiency</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Low starting torque</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">More winding wire required</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Less heat dissipation</li>
+</ul>
+<hr>
+<h3 id="q62">Q62: Which type of winding has more space for cooling?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Between overhanging coils</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Between overhanging coil and rotor</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Between overhanging coils and yoke</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Between overhanging coil and wedge</li>
+</ul>
+<hr>
+<h3 id="q63">Q63: Where the panel boards are used?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Industrial motor drives</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Domestic wiring circuits</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">3 phase domestic wiring</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Load distribution for AC & DC supply</li>
+</ul>
+<hr>
+<h3 id="q64">Q64: Determine the torque in newton metres produced by a 7.5 HP squirrel cage motor rotating at 1440 rpm?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">21.63 Nm</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">24.4 Nm</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">33.05 Nm</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">36.6 Nm</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+
+  \[1 \text{ HP} = 735.5 \text{ Watts}\]
+
+\[P = 7.5 \times 735.5\]
+
+\[P = 5516.25 \text{ Watts}\]
+
+\[T = \frac{P \times 60}{2 \pi N}\]
+
+Where:
+\[\text{P = Power in Watts}\]
+\[\text{N = Speed in RPM}\]
+\[\text{T = Torque in Newton Metres (Nm)}\]
+
+\[T = \frac{5516.25 \times 60}{2 \times 3.14159 \times 1440}\]
+
+\[T = \frac{330975}{9047.78}\]
+
+\[T \approx 36.58 \text{ Nm}\]
+
+(Rounding to one decimal place typically gives 36.6 Nm).
+
+</details>
+<hr>
+<h3 id="q65">Q65: Which type of handle design of rotary switch is illustrated?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q65.webp" alt="rotary switch handle design">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Knob</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Lever</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Coin slot</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Key operation</li>
+</ul>
+<hr>
+<h3 id="q66">Q66: What is the purpose of using rotor resistance starter to start 3 phase slip ring induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce rotor voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce rotor current</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Increase the torque</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Reduce the power loss</li>
+</ul>
+<hr>
+<h3 id="q67">Q67: Which method of speed control is only applicable for 3 phase slipring induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Cascade operation method</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Rotor rheostat speed control</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Changing the applied frequency method</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Changing the number of stator poles method</li>
+</ul>
+<hr>
+<h3 id="q68">Q68: What is the name of the winding?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q68.webp" alt="winding type illustrated">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Skew winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Skein winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Involute coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Diamond coil winding</li>
+</ul>
+<hr>
+<h3 id="q69">Q69: What is the name of 3 phase motor winding, if the coil pitch is less than pole pitch?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Full pitch winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Whole coil winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Long chorded winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Short chorded winding</li>
+</ul>
+<hr>
+<h3 id="q70">Q70: Which is the demerit of 3 phase concentric winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">More space is required</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">A stepped former is required</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">More difficult to shape the coils uniformly</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">It is not easy to make the end connection</li>
+</ul>
+<hr>
+<h3 id="q71">Q71: What is the name of the diagram used for 3phase motor winding?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q71.webp" alt="motor winding diagram type">
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Ring diagram</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Development diagram</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Coil connection diagram</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">End connection diagram</li>
+</ul>
+<hr>
+<h3 id="q72">Q72: Calculate the phase displacement in terms of slots for a 3 phase, 36 slots, 12 coils, 4 pole stator winding?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">3 slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">4 slots</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">6 slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">8 slots</li>
+</ul>
+<details>
+  <summary>Show Calculation</summary>
+
+\[\theta_{total} = 180^\circ \times \text{Number of Poles}\]
+
+\[\theta_{total} = 180^\circ \times 4\]
+
+\[\theta_{total} = 720^\circ\]
+
+
+\[\theta_{slot} = \frac{\text{Total Electrical Degrees}}{\text{Number of Slots}}\]
+
+\[\theta_{slot} = \frac{720^\circ}{36}\]
+
+\[\theta_{slot} = 20^\circ \text{ per slot}\]
+
+
+For a 3-phase system, the displacement is always \()120^\circ\) electrical.
+
+\[\text{Phase Displacement (slots)} = \frac{120^\circ}{\theta_{slot}}\]
+
+\[\text{Phase Displacement (slots)} = \frac{120^\circ}{20^\circ}\]
+
+\[\text{Phase Displacement (slots)} = 6 \text{ slots}\]
+
+</details>
+<hr>
+<h3 id="q73">Q73: Which type of AC motor winding having the number of coil/pole/phase is more than one arranged in different slots?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Basket winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Concentric winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Distributed winding</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Concentrated winding</li>
+</ul>
+<hr>
+<h3 id="q74">Q74: Which type of testing of winding is illustrated?</h3>
+<img src="/assets/img/posts/secondyear/theory/m3-q74.webp" alt="testing of winding illustrated">
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Polarity test</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Resistance test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit test</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Voltage drop test</li>
+</ul>
+<hr>
+<h3 id="q75">Q75: Why external resistance is included in the rotor circuit at starting through 3 phase slipring induction motor starter?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">To get high running torque</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">To get high starting torque</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To reduce the load current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">To get increased speed at starting</li>
+</ul>
+<hr>
+<h3 id="q76">Q76: What is the effect of motor, if the rotor windings in slipring induction motor is open circuited at starting?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Will not run</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs at slow speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs at very high speed</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Runs but not able to pull load</li>
+</ul>
+<hr>
+<h3 id="q77">Q77: What happens to a 3 phase induction motor if one phase fails during running?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor runs normally</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor stop instantaneously</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Motor runs slowly, finally it burns</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor runs with irregular speed</li>
+</ul>
+<hr>
+<h3 id="q78">Q78: What is the effect on 3 phase induction motor if one phase is cut-off during running with load?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor stops at once</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor will run normally</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor runs with humming noise with slow speed</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Motor will run slow speed but winding will be burnt out shortly</li>
+</ul>
+<hr>
+<h3 id="q79">Q79: What is the defect, if starter with single phasing preventer does not switch 'ON'?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Improper phase sequence</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Fluctuations in line voltage</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Loose contact in supply lines</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Wrong terminal connections at motor</li>
+</ul>
+<hr>
+<h3 id="q80">Q80: What is the defect in AC 3 phase induction motor runs at low speed if loaded?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Wrong motor connection</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Wrong starter connection</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Open circuit in rotor winding</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Partially shorted stator winding</li>
+</ul>
+<hr>
+<h3 id="q81">Q81: Which fault condition thermal overload relay protects A.C induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Short circuit</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Open circuit</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Over current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Under voltage</li>
+</ul>
+<hr>
+<h3 id="q82">Q82: What happens to the rotor of a 3 phase induction motor if its speed attains to synchronous speed?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Rotor speed reduces</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Rotor speed increases</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Rotor speed remains same</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Rotor bars get damaged</li>
+</ul>
+<hr>
+<h3 id="q83">Q83: What is the effect of open circuit in rotor of an induction motor?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor does not start</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Over heating in motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Excess vibration of shaft</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Motor runs with very low speed</li>
+</ul>
+<hr>
+<h3 id="q84">Q84: What is the reason for frequent blowing of fuse after motor running some time?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Improper earthing</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Over loading of motor</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Heavy voltage fluctuation</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Poor insulation in winding</li>
+</ul>
+<hr>
+<h3 id="q85">Q85: What happens to a 3 phase induction motor, if one phase fails during starting?</h3>
+<ul>
+<li onclick="checkAnswer(this, true)" data-correct="true">Motor runs and stop immediately</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor runs in slow speed continuously</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor runs and draws more current</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Motor continues to run with irregular speed</li>
+</ul>
+<hr>
+<h3 id="q86">Q86: Which is the cause for the 3 phase motor starter with single phase preventer trips frequently?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Incorrect fuse ratings</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Unbalanced line voltage</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Incorrect settings of OLR</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Improper phase sequence</li>
+</ul>
+<hr>
+<h3 id="q87">Q87: What indication denotes the shorted coil defect in 3 phase motor stator winding while testing with internal growler by keeping hacksaw blade?</h3>
+<ul>
+<li onclick="checkAnswer(this, false)" data-correct="false">Hacksaw blade gets over heated</li>
+<li onclick="checkAnswer(this, true)" data-correct="true">Rapid vibration of hacksaw blade</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Hacksaw blade repels against the slots</li>
+<li onclick="checkAnswer(this, false)" data-correct="false">Attracted by the winding turns on the slot</li>
+</ul>
+<hr>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true}, 
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    <script src="js/layout.js"></script>
+<script src="js/mcq.js"></script> 
+  </body>
+</html>
