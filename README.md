@@ -1,18 +1,23 @@
 <div align="center">
-  
   <img src="www/assets/avatar.png" alt="OhmLaws Logo" width="120" height="120">
 
-  # OhmLaws
+  <h1>OhmLaws</h1>
 
-  **The ultimate offline study companion for ITI Electrician students.**
+  <p><strong>The ultimate offline study companion for ITI Electrician students.</strong></p>
 
-  [![Build Status](https://github.com/roniui/ohmlaw-app/actions/workflows/build-apk.yml/badge.svg)](https://github.com/roniui/ohmlaw-app/actions/workflows/build-apk.yml)
-  [![Latest Version](https://img.shields.io/github/v/release/roniui/ohmlaw-app?style=flat-square&color=blue&label=Release)](https://github.com/roniui/ohmlaw-app/releases/latest)
-  ![Platform](https://img.shields.io/badge/Platform-Android-green)
-  [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
+  <a href="https://github.com/roniui/ohmlaw-app/actions/workflows/build-apk.yml">
+    <img src="https://github.com/roniui/ohmlaw-app/actions/workflows/build-apk.yml/badge.svg" alt="Build Status">
+  </a>
+  <a href="https://github.com/roniui/ohmlaw-app/releases/latest">
+    <img src="https://img.shields.io/github/v/release/roniui/ohmlaw-app?style=flat-square&color=blue&label=Release" alt="Latest Version">
+  </a>
+  <img src="https://img.shields.io/badge/Platform-Android-green" alt="Platform">
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue" alt="License">
+  </a>
 
   <br>
-
+<br>
   <a href="https://github.com/roniui/ohmlaw-app/releases/latest">
     <img src="https://img.shields.io/badge/Download_Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Download APK">
   </a>
