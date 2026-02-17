@@ -1,4 +1,5 @@
 <div align="center">
+  
   <img src="www/assets/avatar.png" alt="OhmLaws Logo" width="120" height="120">
 
   # OhmLaws
@@ -18,6 +19,7 @@
   <a href="https://ohmlaws.github.io">
     <img src="https://img.shields.io/badge/Website-Visit_Site-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Visit Website">
   </a>
+  
 </div>
 
 ---
