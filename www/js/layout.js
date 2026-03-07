@@ -38,6 +38,7 @@ function toggleTheme() {
     }
 }
 
+
 // --- 3. HTML COMPONENTS ---
 
 const HeaderHTML = `
@@ -68,8 +69,13 @@ const SidebarHTML = `
             <a href="privacy-policy.html" class="nav-item"> <div class="nav-icon">${icons.user}</div> PRIVACY POLICY </a>
            
         </div>
-        <div class="sidebar-footer">
-            <div>Made with 🧡 by Roni</div> 
+        <div class="sidebar-footer" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px; box-sizing: border-box; text-align: center; border-top: 1px solid rgba(139, 148, 158, 0.2); display: flex; flex-direction: column; align-items: center; gap: 6px; background: inherit; z-index: 10;">
+            <div style="font-size: 13px;">Made with 🧡 by Roni</div> 
+            <div style="font-size: 11px; color: #8b949e; margin-bottom: 4px;">Version <span id="app-version-text">Checking...</span></div>
+            <button id="check-update-btn" style="background: transparent; border: 1px solid #8b949e; color: inherit; padding: 8px 12px; border-radius: 6px; font-size: 13px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <svg style="width: 18px; height: 18px; flex-shrink: 0;" viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                <span>Check for Update</span>
+            </button>
         </div>
     </div>
 `;
@@ -124,3 +130,66 @@ function toggleSidebar() {
 })();
 // Run Layout
 loadLayout();
+
+document.addEventListener("deviceready", function() {
+    // 1. Get the app version dynamically (Requires cordova-plugin-app-version)
+    if (window.cordova && cordova.getAppVersion) {
+        cordova.getAppVersion.getVersionNumber().then(function (version) {
+            document.getElementById('app-version-text').innerText = version;
+            window.currentAppVersion = version; 
+        });
+    } else {
+        // Fallback if testing on PC browser
+        document.getElementById('app-version-text').innerText = "1.0.12 (Browser)";
+        window.currentAppVersion = "1.0.12";
+    }
+
+    // 2. Attach click event to the button injected by layout
+    document.getElementById('check-update-btn').addEventListener('click', checkForUpdates);
+}, false);
+
+function checkForUpdates() {
+    if (!navigator.onLine) {
+        alert("Please connect to the internet to check for updates.");
+        return;
+    }
+
+    const githubApiUrl = "https://api.github.com/repos/roniui/ohmlaw-app/releases/latest"; 
+    
+    // Change button text to show loading state
+    const btn = document.getElementById('check-update-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "Checking...";
+    btn.disabled = true;
+
+    fetch(githubApiUrl)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            // Restore button
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+
+            let latestVersion = data.tag_name.replace('v', '');
+            let downloadLink = data.assets[0].browser_download_url;
+
+            if (window.currentAppVersion !== latestVersion) {
+                let update = confirm("New version " + latestVersion + " is available! Do you want to download the APK?");
+                if (update) {
+                    window.open(downloadLink, '_system'); 
+                }
+            } else {
+                alert("You are on the latest version (" + latestVersion + ")!");
+            }
+        })
+        .catch(error => {
+            // Restore button
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            
+            console.error("Error checking for update:", error);
+            alert("Could not reach GitHub right now. Try again later.");
+        });
+        }
