@@ -1,3 +1,16 @@
+(function injectCordova() {
+    // Only inject if it hasn't been added yet
+    if (!document.querySelector('script[src="cordova.js"]')) {
+        var cordovaScript = document.createElement('script');
+        cordovaScript.src = 'cordova.js';
+        
+        cordovaScript.async = false; 
+        
+        // Inject it into the <head> of the document
+        document.head.appendChild(cordovaScript);
+    }
+})();
+
 // --- 1. SVG ICONS ---
 const icons = {
     menu: `<svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`,
