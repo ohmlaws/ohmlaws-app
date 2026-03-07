@@ -40,6 +40,11 @@ jobs:
           cd myapp
           cordova platform add android
 
+      - name: Install Cordova Plugins
+        run: |
+          cd myapp
+          cordova plugin add cordova-plugin-app-version
+
       - name: Increment App Version
         run: |
           cd myapp
