@@ -104,6 +104,9 @@ const UpdateModalHTML = `
         <div class="custom-modal">
             <h3>Update Available!</h3>
             <p id="updateModalText">A new version is ready to download.</p>
+            
+            <a id="changelogLink" href="#" target="_blank" style="display: block; margin-bottom: 20px; color: #ff7300; font-size: 13px; text-decoration: none;">View what's new</a>
+            
             <div class="modal-buttons">
                 <button class="modal-btn modal-cancel" onclick="closeUpdateModal()">Cancel</button>
                 <button class="modal-btn modal-confirm" id="confirmUpdateBtn">Download</button>
@@ -111,6 +114,7 @@ const UpdateModalHTML = `
         </div>
     </div>
 `;
+
 
 // --- 4. INJECT & LAYOUT ---
 
@@ -200,14 +204,18 @@ function checkForUpdates() {
 
             let latestVersion = data.tag_name.replace('v', '');
             let downloadLink = data.assets[0].browser_download_url;
+            
+            // Grab the link to the GitHub release page
+            let releasePageLink = data.html_url;
 
-            // --- REPLACED THIS SECTION ---
             if (window.currentAppVersion !== latestVersion) {
-                // Show the beautiful new custom modal
                 document.getElementById('updateModalText').innerText = "Version " + latestVersion + " is available! Do you want to download the new APK?";
+                
+                // Set the changelog link URL
+                document.getElementById('changelogLink').href = releasePageLink;
+                
                 document.getElementById('updateModal').classList.add('show');
                 
-                // Attach the download action to the orange button
                 document.getElementById('confirmUpdateBtn').onclick = function() {
                     window.open(downloadLink, '_system');
                     closeUpdateModal();
