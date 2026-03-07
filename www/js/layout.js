@@ -99,12 +99,25 @@ const FooterHTML = `
     </footer>
 `;
 
+const UpdateModalHTML = `
+    <div id="updateModal" class="custom-modal-overlay">
+        <div class="custom-modal">
+            <h3>Update Available!</h3>
+            <p id="updateModalText">A new version is ready to download.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-cancel" onclick="closeUpdateModal()">Cancel</button>
+                <button class="modal-btn modal-confirm" id="confirmUpdateBtn">Download</button>
+            </div>
+        </div>
+    </div>
+`;
+
 // --- 4. INJECT & LAYOUT ---
 
 function loadLayout() {
     // Inject content
     document.body.insertAdjacentHTML('afterbegin', SidebarHTML + HeaderHTML);
-    document.body.insertAdjacentHTML('beforeend', FooterHTML);
+    document.body.insertAdjacentHTML('beforeend', FooterHTML + UpdateModalHTML);
 
     // Highlight active page
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -188,14 +201,21 @@ function checkForUpdates() {
             let latestVersion = data.tag_name.replace('v', '');
             let downloadLink = data.assets[0].browser_download_url;
 
+            // --- REPLACED THIS SECTION ---
             if (window.currentAppVersion !== latestVersion) {
-                let update = confirm("New version " + latestVersion + " is available! Do you want to download the APK?");
-                if (update) {
-                    window.open(downloadLink, '_system'); 
-                }
+                // Show the beautiful new custom modal
+                document.getElementById('updateModalText').innerText = "Version " + latestVersion + " is available! Do you want to download the new APK?";
+                document.getElementById('updateModal').classList.add('show');
+                
+                // Attach the download action to the orange button
+                document.getElementById('confirmUpdateBtn').onclick = function() {
+                    window.open(downloadLink, '_system');
+                    closeUpdateModal();
+                };
             } else {
                 alert("You are on the latest version (" + latestVersion + ")!");
             }
+            // -----------------------------
         })
         .catch(error => {
             // Restore button
@@ -205,4 +225,8 @@ function checkForUpdates() {
             console.error("Error checking for update:", error);
             alert("Could not reach GitHub right now. Try again later.");
         });
-        }
+}
+
+function closeUpdateModal() {
+    document.getElementById('updateModal').classList.remove('show');
+}
