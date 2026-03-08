@@ -161,36 +161,48 @@ function toggleSidebar() {
 // Run Layout
 loadLayout();
 
+// --- 5. VERSION CHECKING & MODAL LOGIC ---
 document.addEventListener("deviceready", function() {
-    // 1. Get the app version dynamically (Requires cordova-plugin-app-version)
     if (window.cordova && cordova.getAppVersion) {
         cordova.getAppVersion.getVersionNumber().then(function (version) {
             document.getElementById('app-version-text').innerText = version;
             window.currentAppVersion = version; 
+            
+            // AUTOMATIC CHECK: Run silently as soon as the version is loaded
+            checkForUpdates(false); 
         });
     } else {
-        // Fallback if testing on PC browser
         document.getElementById('app-version-text').innerText = "1.0.12 (Browser)";
         window.currentAppVersion = "1.0.12";
+        
+        // AUTOMATIC CHECK (Browser Fallback)
+        checkForUpdates(false);
     }
 
-    // 2. Attach click event to the button injected by layout
-    document.getElementById('check-update-btn').addEventListener('click', checkForUpdates);
+    // MANUAL CHECK: Attach to button, run with alerts turned on
+    document.getElementById('check-update-btn').addEventListener('click', function() {
+        checkForUpdates(true);
+    });
 }, false);
 
-function checkForUpdates() {
+// Added 'isManual' parameter (defaults to true)
+function checkForUpdates(isManual = true) {
+    // If auto-checking and offline, just silently fail. If manual, alert them.
     if (!navigator.onLine) {
-        alert("Please connect to the internet to check for updates.");
+        if (isManual) alert("Please connect to the internet to check for updates.");
         return;
     }
 
     const githubApiUrl = "https://api.github.com/repos/roniui/ohmlaw-app/releases/latest"; 
     
-    // Change button text to show loading state
     const btn = document.getElementById('check-update-btn');
     const originalText = btn.innerHTML;
-    btn.innerHTML = "Checking...";
-    btn.disabled = true;
+    
+    // Only show "Checking..." on the button if the user actually clicked it
+    if (isManual) {
+        btn.innerHTML = "Checking...";
+        btn.disabled = true;
+    }
 
     fetch(githubApiUrl)
         .then(response => {
@@ -198,22 +210,22 @@ function checkForUpdates() {
             return response.json();
         })
         .then(data => {
-            // Restore button
-            btn.innerHTML = originalText;
-            btn.disabled = false;
+            // Restore button if it was a manual check
+            if (isManual) {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
 
             let latestVersion = data.tag_name.replace('v', '');
             let downloadLink = data.assets[0].browser_download_url;
-            
             // Grab the link to the GitHub release page
             let releasePageLink = data.html_url;
 
             if (window.currentAppVersion !== latestVersion) {
+                // Show the beautiful new custom modal (for both manual AND automatic checks!)
                 document.getElementById('updateModalText').innerText = "Version " + latestVersion + " is available! Do you want to download the new APK?";
-                
                 // Set the changelog link URL
                 document.getElementById('changelogLink').href = releasePageLink;
-                
                 document.getElementById('updateModal').classList.add('show');
                 
                 document.getElementById('confirmUpdateBtn').onclick = function() {
@@ -221,17 +233,20 @@ function checkForUpdates() {
                     closeUpdateModal();
                 };
             } else {
-                alert("You are on the latest version (" + latestVersion + ")!");
+                // ONLY show the "latest version" alert if they clicked the button manually
+                if (isManual) {
+                    alert("You are on the latest version (" + latestVersion + ")!");
+                }
             }
-            // -----------------------------
         })
         .catch(error => {
-            // Restore button
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            
-            console.error("Error checking for update:", error);
-            alert("Could not reach GitHub right now. Try again later.");
+            // Restore button if manual check failed
+            if (isManual) {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                console.error("Error checking for update:", error);
+                alert("Could not reach GitHub right now. Try again later.");
+            }
         });
 }
 
