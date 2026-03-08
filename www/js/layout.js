@@ -185,11 +185,11 @@ document.addEventListener("deviceready", function() {
     });
 }, false);
 
-// Added 'isManual' parameter (defaults to true)
+
 function checkForUpdates(isManual = true) {
-    // If auto-checking and offline, just silently fail. If manual, alert them.
+    // 1. OFFLINE ERROR: If auto-checking, silently fail. If manual, show custom alert.
     if (!navigator.onLine) {
-        if (isManual) alert("Please connect to the internet to check for updates.");
+        if (isManual) showCustomAlert("No Internet", "Please connect to the internet to check for updates.");
         return;
     }
 
@@ -218,24 +218,20 @@ function checkForUpdates(isManual = true) {
 
             let latestVersion = data.tag_name.replace('v', '');
             let downloadLink = data.assets[0].browser_download_url;
-            // Grab the link to the GitHub release page
             let releasePageLink = data.html_url;
 
             if (window.currentAppVersion !== latestVersion) {
-                // Show the beautiful new custom modal (for both manual AND automatic checks!)
-                document.getElementById('updateModalText').innerText = "Version " + latestVersion + " is available! Do you want to download the new APK?";
-                // Set the changelog link URL
-                document.getElementById('changelogLink').href = releasePageLink;
-                document.getElementById('updateModal').classList.add('show');
-                
-                document.getElementById('confirmUpdateBtn').onclick = function() {
-                    window.open(downloadLink, '_system');
-                    closeUpdateModal();
-                };
+                // MEMORY CHECK: If auto-check AND they already clicked Cancel this session, stay silent!
+                if (!isManual && sessionStorage.getItem('updateDismissed') === 'true') {
+                    return; 
+                }
+
+                // Show the beautiful Update Modal
+                showUpdateModal(latestVersion, releasePageLink, downloadLink);
             } else {
-                // ONLY show the "latest version" alert if they clicked the button manually
+                // 2. UP TO DATE: ONLY show if they clicked the button manually
                 if (isManual) {
-                    alert("You are on the latest version (" + latestVersion + ")!");
+                    showCustomAlert("Up to Date", "You are currently on the latest version (" + latestVersion + ").");
                 }
             }
         })
@@ -245,11 +241,53 @@ function checkForUpdates(isManual = true) {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 console.error("Error checking for update:", error);
-                alert("Could not reach GitHub right now. Try again later.");
+                
+                // 3. API ERROR: Show custom alert
+                showCustomAlert("Connection Error", "Could not reach GitHub right now. Try again later.");
             }
         });
 }
 
-function closeUpdateModal() {
+// --- MODAL GENERATOR HELPERS ---
+
+// Helper 1: Builds the full Update Modal with changelog and Download button
+function showUpdateModal(latestVersion, releasePageLink, downloadLink) {
+    const modalBox = document.querySelector('.custom-modal');
+    modalBox.innerHTML = `
+        <h3>Update Available!</h3>
+        <p>Version ${latestVersion} is available! Do you want to download the new APK?</p>
+        <a id="changelogLink" href="${releasePageLink}" target="_blank" style="display: inline-block; margin-bottom: 24px; color: #ff7300; font-size: 13px; text-decoration: none; font-weight: 500;">View what's new</a>
+        <div class="modal-buttons">
+            <button class="modal-btn modal-cancel" onclick="closeUpdateModal(true)">Cancel</button>
+            <button class="modal-btn modal-confirm" id="confirmUpdateBtn">Download</button>
+        </div>
+    `;
+    
+    document.getElementById('confirmUpdateBtn').onclick = function() {
+        window.open(downloadLink, '_system');
+        closeUpdateModal(false); 
+    };
+    
+    document.getElementById('updateModal').classList.add('show');
+}
+
+// Helper 2: Builds a generic Alert Modal with just an "OK" button
+function showCustomAlert(title, message) {
+    const modalBox = document.querySelector('.custom-modal');
+    modalBox.innerHTML = `
+        <h3>${title}</h3>
+        <p style="margin-bottom: 24px;">${message}</p>
+        <div class="modal-buttons">
+            <button class="modal-btn modal-confirm" onclick="closeUpdateModal(false)" style="width: 100%;">OK</button>
+        </div>
+    `;
+    document.getElementById('updateModal').classList.add('show');
+}
+
+// Closes the modal and saves to short-term memory if the user clicked "Cancel"
+function closeUpdateModal(wasDismissed) {
+    if (wasDismissed === true) {
+        sessionStorage.setItem('updateDismissed', 'true');
+    }
     document.getElementById('updateModal').classList.remove('show');
 }
