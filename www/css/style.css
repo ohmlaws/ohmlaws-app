@@ -53,17 +53,17 @@ header {
     top: 0;
     left: -100%;
     width: var(--sidebar-width);
+    max-width: 70vw; 
     height: 100%;
-    
-    /* FIXED: Use variable instead of hardcoded color */
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--border);
-    
     transition: left 0.3s, background 0.3s;
     z-index: 200;
     display: flex;
     flex-direction: column;
+    overflow-y: auto; 
 }
+
 
 .sidebar.active { left: 0; }
 
@@ -77,6 +77,9 @@ header {
 .sidebar-subtitle { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
 
 .nav-links { padding: 20px 0; flex-grow: 1; }
+body.no-scroll {
+    overflow: hidden;
+}
 
 .nav-item {
     display: flex;
